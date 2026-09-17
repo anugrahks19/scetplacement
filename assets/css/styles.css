@@ -21,3 +21,5 @@ Last change:    19 June, 2026
 @import url(small-card-grid.css);
 @import url(accordion-tab.css);
 @import url(widgets.css);
+.transform-hover { transform: translateY(-5px); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+

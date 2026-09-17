@@ -1,0 +1,31 @@
+# Environments
+.env
+
+# Temporary and Scratch Files
+*_target.txt
+*_content.txt
+scratch*.js
+scratch*.txt
+pr1.diff
+
+# Injection and Maintenance Scripts
+inject*.js
+inject*.ps1
+replace_main.js
+update_links.js
+wrap-*.js
+restructure.py
+fix_*.ps1
+compile_*.ps1
+build_*.ps1
+redirect.ps1
+remove_secrets.ps1
+find_modal.ps1
+extract_nav.ps1
+
+# Test files
+test.js
+test_or.js
+test_llama.json
+test_openrouter.json
+test.wav

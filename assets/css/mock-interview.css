@@ -1,0 +1,109 @@
+/* Mock Interview Custom Styles */
+
+.interview-view {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.interviewer-card {
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+}
+
+.ai-avatar {
+    width: 120px;
+    height: 120px;
+    background: var(--bs-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.avatar-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar Ripples for Speaking */
+.ripple-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--bs-primary);
+    opacity: 0;
+    z-index: 1;
+}
+
+.avatar-container.speaking .ripple-1 {
+    animation: ripple 1.5s linear infinite;
+}
+
+.avatar-container.speaking .ripple-2 {
+    animation: ripple 1.5s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes ripple {
+    0% {
+        width: 120px;
+        height: 120px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+.candidate-card {
+    background-color: #1a1d20;
+    min-height: 400px;
+}
+
+.backdrop-blur {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.transcript-box {
+    min-height: 120px;
+    transition: all 0.3s ease;
+}
+
+.mic-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    opacity: 0.3;
+}
+
+.mic-indicator.listening {
+    opacity: 1;
+    animation: pulse-red 1s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.tracking-wide {
+    letter-spacing: 2px;
+}

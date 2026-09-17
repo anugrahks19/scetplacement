@@ -41,6 +41,7 @@ Last change:    19 June, 2026
             this.initBootstrapComponents();
             this.initEventListeners();
             this.initLayoutToggles();
+            this.initBackButton();
         },
 
         // --- Storage Helper ---
@@ -220,6 +221,22 @@ Last change:    19 June, 2026
             window.addEventListener('scroll', () => {
                 header?.classList.toggle("scrolled", window.scrollY > 10);
             }, { passive: true });
+        },
+
+        initBackButton: function () {
+            // Find the left header container
+            const leftHeader = document.querySelector('.d-flex.gap-2.align-items-center.flex-fill');
+            if (leftHeader) {
+                const backBtn = document.createElement('button');
+                backBtn.className = 'btn icon-button border-0 me-1';
+                backBtn.setAttribute('aria-label', 'Go Back');
+                backBtn.setAttribute('title', 'Go Back');
+                backBtn.innerHTML = '<i class="bi bi-arrow-left fs-5"></i>';
+                backBtn.onclick = () => {
+                    window.history.back();
+                };
+                leftHeader.prepend(backBtn);
+            }
         },
 
         // --- Helper: Ripple ---

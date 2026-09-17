@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-theme="theme-indigo" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Faculty Dashboard - SCET Placement Cell</title>
+    <meta content="Comprehensive placement preparation and management portal for SCET students and faculty." name="description"/>
+    <link href="../assets/images/favicon.ico" rel="icon" type="image/png"/>
+    <link href="../assets/images/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="../assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../assets/vendor/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="../assets/vendor/daterangepicker/daterangepicker.css" rel="stylesheet"/>
+    <link href="../assets/css/styles.css" rel="stylesheet"/>
+    <link href="../assets/css/layout-main.css" rel="stylesheet"/>
+    <link href="../assets/css/vendor/charts.css" rel="stylesheet"/>
+    <style>
+        .context-selector-strip {
+            background: rgba(var(--bs-primary-rgb), 0.05);
+            border: 1px dashed rgba(var(--bs-primary-rgb), 0.25);
+            border-radius: 1rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/premium-modals.css">
+</head>
+<body class="layout-main">
+<div class="app-wrapper">
+    <!-- begin::Header -->
+    <header class="sticky-top px-lg-3">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between py-2">
+                <!-- Left Header -->
+                <div class="d-flex gap-2 align-items-center flex-fill">
+                    <button aria-controls="offcanvasMenu" aria-label="Toggle navigation" class="navbar-toggler d-lg-none" data-bs-target="#offcanvasMenu" data-bs-toggle="offcanvas" type="button">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <!-- Brand logo for mobile -->
+                    <a class="brand text-decoration-none d-flex gap-2 align-items-center d-lg-none me-auto" href="faculty-dashboard.html">
+                        <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3C0 1.34315 1.34315 0 3 0H19C26.1797 0 32 5.8203 32 13V19C32 26.1797 26.1797 32 19 32H3C1.34315 32 0 30.6569 0 29V3Z" fill="var(--bs-primary)"></path>
+                            <path d="M12.4851 18.925C12.4851 20.3456 12.7822 21.5962 13.3762 22.6767C13.9901 23.7572 14.8119 24.5975 15.8416 25.1978C16.8713 25.7981 18.0198 26.0982 19.2871 26.0982C20.5743 26.0982 21.7129 25.8181 22.703 25.2578C23.6931 24.6776 24.4653 23.8772 25.0198 22.8568C25.5743 21.8363 25.8515 20.6558 25.8515 19.3151C25.8515 17.9545 25.5743 16.724 25.0198 15.6235C24.4653 14.523 23.6733 13.6426 22.6436 12.9823C21.6337 12.322 20.4356 11.9918 19.0495 11.9918C17.7624 11.9918 16.6238 12.292 15.6337 12.8922C14.6634 13.4925 13.8911 14.3129 13.3168 15.3533C12.7624 16.3938 12.4851 17.5844 12.4851 18.925ZM8 18.925C8 17.3242 8.27723 15.8636 8.83168 14.543C9.38614 13.2024 10.1683 12.0418 11.1782 11.0614C12.1881 10.0809 13.3564 9.33061 14.6832 8.81037C16.0297 8.27012 17.4851 8 19.0495 8C20.6337 8 22.0891 8.27012 23.4158 8.81037C24.7426 9.33061 25.8911 10.0809 26.8614 11.0614C27.8515 12.0418 28.6139 13.2024 29.1485 14.543C29.703 15.8636 29.9802 17.3242 29.9802 18.925C29.9802 20.5057 29.7129 21.9764 29.1782 23.337C28.6436 24.6776 27.8812 25.8481 26.8911 26.8486C25.9208 27.849 24.7723 28.6294 23.4455 29.1896C22.1188 29.7299 20.6535 30 19.0495 30C17.4653 30 16 29.7299 14.6535 29.1896C13.3069 28.6294 12.1287 27.849 11.1188 26.8486C10.1287 25.8481 9.35644 24.6776 8.80198 23.337C8.26733 21.9764 8 20.5057 8 18.925ZM17.7426 20.4256H22.3465L32 32H29.1782L17.7426 20.4256Z" fill="var(--bs-white)"></path>
+                        </svg>
+                        <span class="fs-4 fw-bold">SCET Placement</span>
+                    </a>
+                    <!-- Quick search -->
+                    <button aria-label="Main Search" class="btn icon-button border-0" type="button"><i class="bi bi-search"></i></button>
+                    <!-- Light/Dark toggle -->
+                    <button aria-label="Light/Dark toggle theme" class="btn icon-button border-0" id="themeToggle"><i class="bi bi-sun"></i></button>
+                    <!-- Notifications -->
+                    <button aria-label="Notifications Drawer" class="btn icon-button border-0 position-relative" data-bs-target="#notifications_drawer" data-bs-toggle="offcanvas" type="button">
+                        <span class="bullet-dot bg-warning"></span>
+                        <i class="bi bi-bell"></i>
+                    </button>
+                </div>
+                <!-- Right Header for mobile view -->
+                <div class="right-header d-flex align-items-center me-lg-5 d-lg-none">
+                    <button class="btn icon-button border-0" data-bs-target="#setting_drawer" data-bs-toggle="offcanvas" type="button"><i class="bi bi-gear"></i></button>
+                    <a class="btn btn-sm btn-outline-danger rounded-pill ms-2" href="../index.html">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- begin::Sidebar menu (Left Icon Bar) -->
+    <aside class="navbar navbar-expand-lg align-items-start px-2 px-lg-3 px-xl-4 py-3">
+        <div class="offcanvas offcanvas-start" id="offcanvasSidebar" tabindex="-1">
+            <div class="offcanvas-header">
+                <h6 class="offcanvas-title">Sidebar menu</h6>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+            </div>
+            <div class="offcanvas-body flex-column align-items-lg-center">
+                <!-- Brand logo for desktop -->
+                <a aria-label="DashQ View Students" class="brand text-decoration-none d-none d-lg-flex gap-2 align-items-center" href="faculty-dashboard.html">
+                    <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3C0 1.34315 1.34315 0 3 0H19C26.1797 0 32 5.8203 32 13V19C32 26.1797 26.1797 32 19 32H3C1.34315 32 0 30.6569 0 29V3Z" fill="var(--bs-primary)"></path>
+                        <path d="M12.4851 18.925C12.4851 20.3456 12.7822 21.5962 13.3762 22.6767C13.9901 23.7572 14.8119 24.5975 15.8416 25.1978C16.8713 25.7981 18.0198 26.0982 19.2871 26.0982C20.5743 26.0982 21.7129 25.8181 22.703 25.2578C23.6931 24.6776 24.4653 23.8772 25.0198 22.8568C25.5743 21.8363 25.8515 20.6558 25.8515 19.3151C25.8515 17.9545 25.5743 16.724 25.0198 15.6235C24.4653 14.523 23.6733 13.6426 22.6436 12.9823C21.6337 12.322 20.4356 11.9918 19.0495 11.9918C17.7624 11.9918 16.6238 12.292 15.6337 12.8922C14.6634 13.4925 13.8911 14.3129 13.3168 15.3533C12.7624 16.3938 12.4851 17.5844 12.4851 18.925ZM8 18.925C8 17.3242 8.27723 15.8636 8.83168 14.543C9.38614 13.2024 10.1683 12.0418 11.1782 11.0614C12.1881 10.0809 13.3564 9.33061 14.6832 8.81037C16.0297 8.27012 17.4851 8 19.0495 8C20.6337 8 22.0891 8.27012 23.4158 8.81037C24.7426 9.33061 25.8911 10.0809 26.8614 11.0614C27.8515 12.0418 28.6139 13.2024 29.1485 14.543C29.703 15.8636 29.9802 17.3242 29.9802 18.925C29.9802 20.5057 29.7129 21.9764 29.1782 23.337C28.6436 24.6776 27.8812 25.8481 26.8911 26.8486C25.9208 27.849 24.7723 28.6294 23.4455 29.1896C22.1188 29.7299 20.6535 30 19.0495 30C17.4653 30 16 29.7299 14.6535 29.1896C13.3069 28.6294 12.1287 27.849 11.1188 26.8486C10.1287 25.8481 9.35644 24.6776 8.80198 23.337C8.26733 21.9764 8 20.5057 8 18.925ZM17.7426 20.4256H22.3465L32 32H29.1782L17.7426 20.4256Z" fill="var(--bs-white)"></path>
+                    </svg>
+                </a>
+                <ul class="list-unstyled d-flex flex-column align-items-lg-center gap-2 rounded-pill mt-lg-3 py-lg-4">
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Dashboard" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4 text-primary" href="faculty-dashboard.html">
+                            <i class="bi bi-speedometer fs-4"></i><span class="d-lg-none ms-2">Dashboard</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Questions" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-questions.html">
+                            <i class="bi bi-collection fs-4"></i><span class="d-lg-none ms-2">Questions</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Question Editor" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-question-editor.html">
+                            <i class="bi bi-pencil-square fs-4"></i><span class="d-lg-none ms-2">Question Editor</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Question Review" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-question-review.html">
+                            <i class="bi bi-check2-square fs-4"></i><span class="d-lg-none ms-2">Question Review</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Assessments" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-assessments.html">
+                            <i class="bi bi-journal-check fs-4"></i><span class="d-lg-none ms-2">Assessments</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Assessment Builder" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-assessment-builder.html">
+                            <i class="bi bi-tools fs-4"></i><span class="d-lg-none ms-2">Assessment Builder</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Assessment Results" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-assessment-results.html">
+                            <i class="bi bi-bar-chart-fill fs-4"></i><span class="d-lg-none ms-2">Assessment Results</span>
+                        </a>
+                    </li>
+                    <li data-bs-custom-class="custom-tooltip" data-bs-title="Students" data-bs-toggle="tooltip">
+                        <a class="nav-link py-2 px-2 px-lg-4" href="faculty-students.html">
+                            <i class="bi bi-people fs-4"></i><span class="d-lg-none ms-2">Students</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- begin::Quik Action right bar -->
+    <div class="rightbar text-center d-flex flex-lg-column justify-content-between px-3 px-lg-0 py-2 py-lg-3">
+        <!-- recent chat / coordinators -->
+        <ul class="list-unstyled d-flex flex-lg-column gap-3 align-items-center mb-0 overflow-x-auto pt-lg-1 me-4 me-lg-0 pb-2 li_animate">
+            <li data-bs-custom-class="custom-tooltip" data-bs-placement="left" data-bs-title="Alex Carter" data-bs-toggle="tooltip"><a href="#"><img alt="avatar 1" class="avatar avatar-sm border" loading="lazy" src="../assets/images/avatar/avatar-1.png"/></a></li>
+            <li data-bs-custom-class="custom-tooltip" data-bs-placement="left" data-bs-title="James Walker" data-bs-toggle="tooltip"><a href="#"><img alt="avatar 2" class="avatar avatar-sm border" loading="lazy" src="../assets/images/avatar/avatar-2.png"/></a></li>
+            <li data-bs-custom-class="custom-tooltip" data-bs-placement="left" data-bs-title="Yuna Kim" data-bs-toggle="tooltip"><a href="#"><img alt="avatar 3" class="avatar avatar-sm border" loading="lazy" src="../assets/images/avatar/avatar-3.png"/></a></li>
+            <li data-bs-custom-class="custom-tooltip" data-bs-placement="left" data-bs-title="Ethan Brooks" data-bs-toggle="tooltip"><a href="#"><img alt="avatar 4" class="avatar avatar-sm border" loading="lazy" src="../assets/images/avatar/avatar-4.png"/></a></li>
+            <li data-bs-custom-class="custom-tooltip" data-bs-placement="left" data-bs-title="Omar Al-Hassan" data-bs-toggle="tooltip"><a href="#"><img alt="avatar 5" class="avatar avatar-sm border" loading="lazy" src="../assets/images/avatar/avatar-5.png"/></a></li>
+        </ul>
+        <button aria-controls="offcanvasSidebar" aria-label="Toggle navigation" class="navbar-toggler d-lg-none fs-5 mb-2 mb-lg-0" data-bs-target="#offcanvasSidebar" data-bs-toggle="offcanvas" type="button">
+            <i class="bi bi-layout-sidebar-inset"></i>
+        </button>
+        <!-- user profile and setting -->
+        <div class="d-none d-lg-inline-flex flex-column mt-auto">
+            <button aria-label="Template Settings" class="btn icon-button border-0 py-2 px-3" data-bs-target="#setting_drawer" data-bs-toggle="offcanvas" type="button">
+                <i class="bi bi-gear"></i>
+            </button>
+            <div class="dropdown dropup mt-lg-1">
+                <button aria-expanded="false" class="btn dropdown-toggle after-none border-0 p-0" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
+                    <img alt="Profile" class="rounded-circle border border-2 border-primary shadow" height="34" loading="lazy" src="../assets/images/avatar/avatar-1.png" width="34"/>
+                </button>
+                <div class="dropdown-menu p-lg-4 p-3 rounded-4 shadow-sm">
+                    <div class="mb-4">
+                        <h6 class="mb-0">Faculty User</h6>
+                        <p class="small">faculty@scet.ac.in</p>
+                        <a class="btn btn-primary text-uppercase w-100 rounded-pill" href="../index.html">Sign out</a>
+                    </div>
+                    <a class="dropdown-item rounded-pill" href="faculty-dashboard.html">Dashboard</a>
+                    <a class="dropdown-item rounded-pill" href="faculty-questions.html">Question Bank</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- begin::Content -->
+    <main class="app-body border">
+        <!-- page header, Breadcrumb and page action btn -->
+        <div class="page-header py-2 py-lg-4 p-lg-4">
+            <div class="container-fluid">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="align-items-lg-start d-flex flex-column justify-content-center">
+                        <h1 class="fs-5 section-title mb-0">Faculty Dashboard</h1>
+                        <h2 class="small text-muted fw-normal">Welcome back, Advait Patel!</h2>
+                    </div>
+                    <!-- Date Range Picker & Action Buttons -->
+                    <div class="d-flex gap-1 align-items-center flex-fill flex-sm-grow-0 border border-secondary-subtle rounded-pill px-2 mt-2 mt-md-0">
+                        <input aria-label="Date Range Filter" class="form-control fs-14 border-0 bg-transparent rounded-pill js-daterange focus-ring-none" name="daterange" type="text"/>
+                        <div class="vr"></div>
+                        <div class="d-flex gap-1">
+                            <button aria-label="Share with" class="btn fs-14 btn-link px-2 btn-ripple"><i class="bi bi-share"></i></button>
+                            <button aria-label="PDF Download" class="btn fs-14 btn-link px-2 btn-ripple"><i class="bi bi-filetype-pdf"></i></button>
+                            <button aria-label="Main App Body Fullscreen" class="btn fs-14 btn-link px-2 btn-ripple btn-fullscreen-main d-none d-sm-inline-block" data-bs-title="Main App Body Fullscreen" data-bs-toggle="tooltip"><i class="bi bi-fullscreen"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-2 py-lg-4 p-lg-4">
+            <div class="container-fluid">
+
+                <!-- TOP SELECTION: SEMESTER & CLASS SELECTOR (INTEGRATED CLEANLY) -->
+                <div class="context-selector-strip p-3 mb-4 shadow-sm">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-12 col-md-auto d-flex align-items-center gap-2 pe-md-3 border-end-md">
+                            <i class="bi bi-mortarboard-fill text-primary fs-5"></i>
+                            <span class="fw-bold fs-14 text-uppercase">Class Scope:</span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <select id="deptSelector" class="form-select form-select-sm rounded-pill border-secondary-subtle" onchange="updateContextBadge()">
+                                <option selected>Computer Science & Engineering (CSE)</option>
+                                <option>Information Technology (IT)</option>
+                                <option>Electronics & Comm (ECE)</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <select id="semSelector" class="form-select form-select-sm rounded-pill border-secondary-subtle" onchange="updateContextBadge()">
+                                <option selected>Semester 7 (Placement Prep)</option>
+                                <option>Semester 6 (Core Coding)</option>
+                                <option>Semester 5 (DSA Foundation)</option>
+                                <option>Semester 8</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <select id="classSelector" class="form-select form-select-sm rounded-pill border-secondary-subtle" onchange="updateContextBadge()">
+                                <option selected>Division A (64 Students)</option>
+                                <option>Division B (62 Students)</option>
+                                <option>All Divisions (184 Students)</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-auto ms-md-auto">
+                            <span class="badge bg-primary rounded-pill px-3 py-2" id="scopeBadge"><i class="bi bi-check2-circle me-1"></i>Active: CSE-A (Sem 7)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <!-- Left Primary Column (col-xl-8) -->
+                    <div class="col-xl-8">
+                        <!-- Quick Access Title -->
+                        <div class="d-flex align-items-baseline mb-2 pt-2">
+                            <p class="small me-2 mb-0 text-uppercase">QUICK ACCESS</p>
+                        </div>
+
+                        <!-- Quick Access App Menu (EXACT TEMPLATE STYLE, ZERO BLOAT) -->
+                        <ul class="align-items-start d-flex gap-2 list-unstyled mb-4 app-menu flex-wrap pb-2 ps-1" id="appMenu">
+                            <li>
+                                <a aria-label="Question Bank" class="text-decoration-none color-inherit text-center" href="faculty-questions.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1 bg-primary-subtle">
+                                        <span class="fs-4 fw-light"><i class="bi bi-collection"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Question Bank</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Student List" class="text-decoration-none color-inherit text-center" href="faculty-students.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1 bg-primary-subtle">
+                                        <span class="fs-4 fw-light"><i class="bi bi-people"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Student List</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Schedule Assessments" class="text-decoration-none color-inherit text-center" href="faculty-assessments.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1 bg-primary-subtle">
+                                        <span class="fs-4 fw-light"><i class="bi bi-calendar-event"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Schedule Test</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="AI Question Review" class="text-decoration-none color-inherit text-center" href="faculty-question-review.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1 bg-warning-subtle">
+                                        <span class="fs-4 fw-light"><i class="bi bi-robot text-warning"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12" id="dashboardPendingMetric">AI Review (0)</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Create Question" class="text-decoration-none color-inherit text-center" href="faculty-question-editor.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1">
+                                        <span class="fs-4 fw-light"><i class="bi bi-pencil-square"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Add Question</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Assessment Builder" class="text-decoration-none color-inherit text-center" href="faculty-assessment-builder.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1">
+                                        <span class="fs-4 fw-light"><i class="bi bi-tools"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Test Builder</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Overall Stats" class="text-decoration-none color-inherit text-center" href="faculty-assessment-results.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1">
+                                        <span class="fs-4 fw-light"><i class="bi bi-bar-chart-line"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Overall Stats</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a aria-label="Integrity Review" class="text-decoration-none color-inherit text-center" href="faculty-question-review.html">
+                                    <div class="app-card card fw-bold rounded-4 mt-0 mb-1">
+                                        <span class="fs-4 fw-light"><i class="bi bi-shield-check"></i></span>
+                                    </div>
+                                    <div class="app-label fs-12">Integrity Log</div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Purple Hero Banner (EXACT TEMPLATE STYLE) -->
+                        <div class="card rounded-4 bg-primary-gradient mb-4">
+                            <div class="card-body p-5 d-flex flex-column flex-lg-row text-center text-lg-start justify-content-between gap-5 align-items-center text-white">
+                                <div>
+                                    <h3 class="h1">Mid-Term Assessments</h3>
+                                    <p class="mb-4 font-mono">Create and publish assessment schedules for the semester.</p>
+                                    <div class="d-flex gap-2">
+                                        <a href="faculty-assessment-builder.html" class="btn btn-ripple btn-light w-50 rounded-pill">Create Assessment</a>
+                                        <a href="faculty-assessments.html" class="btn btn-ripple btn-dark w-50 rounded-pill">View Schedule</a>
+                                    </div>
+                                </div>
+                                <img alt="card hero image" class="img-fluid w-25 d-none d-lg-block" loading="lazy" src="../assets/images/hero-card-image.svg"/>
+                            </div>
+                        </div>
+
+                        <!-- Active Assessments List -->
+                        <div class="card rounded-4 border shadow-sm mb-4">
+                            <div class="card-header bg-transparent py-3 px-4 d-flex justify-content-between align-items-center border-bottom">
+                                <div>
+                                    <h6 class="fw-bold mb-0">Active & Scheduled Class Assessments</h6>
+                                    <span class="small text-muted" id="assessmentStatusSubtitle">Real-time status for CSE - Division A</span>
+                                </div>
+                                <a href="faculty-assessments.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">View All</a>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr class="small text-uppercase text-muted">
+                                                <th class="ps-4">Assessment Title</th>
+                                                <th>Questions</th>
+                                                <th>Submissions</th>
+                                                <th>Status</th>
+                                                <th class="text-end pe-4">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <div class="fw-semibold">TCS NQT Full Diagnostic Mock</div>
+                                                    <span class="small text-muted">Aptitude, Reasoning, Coding (2 Problems)</span>
+                                                </td>
+                                                <td>42 Items</td>
+                                                <td><span class="fw-bold">58 / 64</span> (90%)</td>
+                                                <td><span class="badge bg-success-subtle text-success rounded-pill px-2 py-1">Active</span></td>
+                                                <td class="text-end pe-4">
+                                                    <a href="faculty-assessment-results.html" class="btn btn-sm btn-light border rounded-pill px-2">Monitor</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <div class="fw-semibold">Dynamic Programming Sprint #2</div>
+                                                    <span class="small text-muted">Memoization, Tabulation, Knapsack</span>
+                                                </td>
+                                                <td>4 Problems</td>
+                                                <td><span class="fw-bold">42 / 64</span> (65%)</td>
+                                                <td><span class="badge bg-success-subtle text-success rounded-pill px-2 py-1">Active</span></td>
+                                                <td class="text-end pe-4">
+                                                    <a href="faculty-assessment-results.html" class="btn btn-sm btn-light border rounded-pill px-2">Monitor</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <div class="fw-semibold">Infosys SpringBoard Reasoning Drill</div>
+                                                    <span class="small text-muted">Logical Deductions, Cryptarithmetic</span>
+                                                </td>
+                                                <td>30 MCQs</td>
+                                                <td><span class="fw-bold">0 / 64</span> (Starts 4 PM)</td>
+                                                <td><span class="badge bg-info-subtle text-info rounded-pill px-2 py-1">Scheduled</span></td>
+                                                <td class="text-end pe-4">
+                                                    <a href="faculty-assessment-builder.html" class="btn btn-sm btn-light border rounded-pill px-2">Edit</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: My Todo List (EXACT TEMPLATE STYLE, NO 31°C WEATHER) -->
+                    <div class="col-xl-4">
+                        <div class="sticky-lg-top z-0">
+                            <div class="d-flex align-items-baseline mb-2 pt-2 ms-xxl-4">
+                                <p class="small me-2 mb-0 text-uppercase">MY TODO LIST</p>
+                                <span class="small">4 Tasks</span>
+                            </div>
+                            <div class="card rounded-4 mt-0 ms-xxl-4 p-1 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start bg-body-tertiary p-3 rounded-4 border border-dashed mb-2">
+                                        <div>
+                                            <h3 class="h1 mb-2">Today</h3>
+                                            <p class="small mb-0"><span id="currentDate">Wed Sep 16, 2026</span> <span>SCET Placement</span></p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-primary rounded-pill px-3 py-2 fs-14">Academic</span>
+                                        </div>
+                                    </div>
+                                    <!-- Date Tabs -->
+                                    <ul class="nav day-nav mb-3 small justify-content-between" id="dayTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="true" class="nav-link px-2 active" data-bs-target="#tue" data-bs-toggle="tab" id="tue-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">1</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Tue</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#wed" data-bs-toggle="tab" id="wed-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">2</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Wed</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#thu" data-bs-toggle="tab" id="thu-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">3</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Thu</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#fri" data-bs-toggle="tab" id="fri-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">4</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Fri</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#sat" data-bs-toggle="tab" id="sat-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">5</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Sat</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#sun" data-bs-toggle="tab" id="sun-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">6</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Sun</span>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button aria-selected="false" class="nav-link px-2" data-bs-target="#mon" data-bs-toggle="tab" id="mon-tab" role="tab" type="button">
+                                                <span class="avatar avatar-sm avatar-text day-number mb-1">7</span>
+                                                <span class="day-name d-block fs-12 text-uppercase">Mon</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <!-- Add new task -->
+                                    <div class="d-flex align-items-center rounded-pill border px-1 g-2 mb-3">
+                                        <input class="form-control border-0 bg-transparent focus-ring-none flex-grow-1" id="newTaskInput" name="add new task" placeholder="Enter task here" type="text"/>
+                                        <button class="btn btn-dark btn-sm rounded-pill btn-ripple text-nowrap px-3" onclick="addTask()" type="button">Add Task</button>
+                                    </div>
+                                    <!-- Tab content (tasks per day) -->
+                                    <div class="tab-content">
+                                        <div aria-labelledby="tue-tab" class="tab-pane fade show active" id="tue" role="tabpanel">
+                                            <div class="task-row d-flex align-items-center justify-content-between py-2 border-bottom">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" id="task_1" type="checkbox"/>
+                                                    <label class="form-check-label task-label" for="task_1">
+                                                        Verify AI Question Queue (18)
+                                                    </label>
+                                                </div>
+                                                <span class="small text-muted"><i class="bi bi-clock me-1"></i>9:30 AM</span>
+                                            </div>
+                                            <div class="task-row d-flex align-items-center justify-content-between py-2 border-bottom">
+                                                <div class="form-check">
+                                                    <input checked class="form-check-input" id="task_2" type="checkbox"/>
+                                                    <label class="form-check-label task-label text-decoration-line-through text-muted" for="task_2">
+                                                        Review TCS NQT Mock Test
+                                                    </label>
+                                                </div>
+                                                <span class="small text-muted"><i class="bi bi-clock me-1"></i>11:00 AM</span>
+                                            </div>
+                                            <div class="task-row d-flex align-items-center justify-content-between py-2 border-bottom">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" id="task_3" type="checkbox"/>
+                                                    <label class="form-check-label task-label" for="task_3">
+                                                        Publish Coding Sprint #2
+                                                    </label>
+                                                </div>
+                                                <span class="small text-muted"><i class="bi bi-clock me-1"></i>2:30 PM</span>
+                                            </div>
+                                            <div class="task-row d-flex align-items-center justify-content-between py-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" id="task_4" type="checkbox"/>
+                                                    <label class="form-check-label task-label" for="task_4">
+                                                        Check Proctoring Integrity Logs
+                                                    </label>
+                                                </div>
+                                                <span class="small text-muted"><i class="bi bi-clock me-1"></i>4:30 PM</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Scripts -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+    document.getElementById('themeToggle')?.addEventListener('click', function () {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-bs-theme', newTheme);
+    });
+
+    function updateContextBadge() {
+        const dept = document.getElementById('deptSelector').value.split(' ')[0];
+        const sem = document.getElementById('semSelector').value.split(' ')[1];
+        const cls = document.getElementById('classSelector').value.split(' ')[1];
+        
+        let deptLabel = dept;
+        if (document.getElementById('deptSelector').value.includes('ECE')) deptLabel = 'ECE';
+        else if (document.getElementById('deptSelector').value.includes('IT')) deptLabel = 'IT';
+        else if (document.getElementById('deptSelector').value.includes('CSE')) deptLabel = 'CSE';
+
+        document.getElementById('scopeBadge').innerHTML = `<i class="bi bi-check2-circle me-1"></i>Active: ${deptLabel}-${cls} (Sem ${sem})`;
+        const subtitle = document.getElementById('assessmentStatusSubtitle');
+        if (subtitle) {
+            subtitle.innerText = `Real-time status for ${deptLabel} - Division ${cls}`;
+        }
+    }
+
+    function addTask() {
+        const input = document.getElementById('newTaskInput');
+        if (!input.value.trim()) return;
+        const container = document.getElementById('tue');
+        const newRow = document.createElement('div');
+        newRow.className = 'task-row d-flex align-items-center justify-content-between py-2 border-bottom';
+        newRow.innerHTML = `
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"/>
+                <label class="form-check-label task-label">${input.value.trim()}</label>
+            </div>
+            <span class="small text-muted"><i class="bi bi-clock me-1"></i>Just now</span>
+        `;
+        container.prepend(newRow);
+        input.value = '';
+    }
+
+    async function loadDashboardMetrics() {
+        try {
+            const query = `query { questions(status: PENDING_REVIEW) { id } }`;
+            const data = await graphqlRequest(query);
+            const count = data.questions ? data.questions.length : 0;
+            const el = document.getElementById('dashboardPendingMetric');
+            if (el) el.innerText = `AI Review (${count})`;
+        } catch (e) {
+            console.error('Failed to load pending metrics', e);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', loadDashboardMetrics);
+</script>
+
+    <script src="../assets/js/premium-modals.js"></script>
+</body>
+</html>

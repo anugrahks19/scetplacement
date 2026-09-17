@@ -84,21 +84,22 @@ d:\scetplacement-main\
 │   ├── package.json
 │   └── .env                         # Environment variables (DO NOT COMMIT)
 │
-├── assets\                           # CSS, JS, images, vendor libraries
-│   ├── css\
-│   ├── js\
-│   ├── images\
-│   └── vendor\                       # Bootstrap, jQuery, etc.
-│
-├── index.html                        # Login page (entry point)
-├── faculty-dashboard.html            # Faculty main dashboard
-├── faculty-questions.html            # Question bank with filters
-├── faculty-question-editor.html      # Create/Edit questions + AI generation
-├── faculty-question-review.html      # AI review queue
-├── faculty-assessments.html          # Assessment list
-├── faculty-assessment-builder.html   # Create & schedule assessments
-├── faculty-assessment-results.html   # Leaderboard & analytics
-├── faculty-students.html             # Student roster & readiness tracker
+├── frontend\                         # Static frontend files
+│   ├── assets\                       # CSS, JS, images, vendor libraries
+│   │   ├── css\
+│   │   ├── js\
+│   │   ├── images\
+│   │   └── vendor\                   # Bootstrap, jQuery, etc.
+│   │
+│   ├── index.html                    # Login page (entry point)
+│   ├── faculty-dashboard.html        # Faculty main dashboard
+│   ├── faculty-questions.html        # Question bank with filters
+│   ├── faculty-question-editor.html  # Create/Edit questions + AI generation
+│   ├── faculty-question-review.html  # AI review queue
+│   ├── faculty-assessments.html      # Assessment list
+│   ├── faculty-assessment-builder.html # Create & schedule assessments
+│   ├── faculty-assessment-results.html # Leaderboard & analytics
+│   └── faculty-students.html         # Student roster & readiness tracker
 │
 ├── scetplacement.pdf                 # Original project specification
 └── README.md                         # This file
@@ -178,7 +179,7 @@ The GraphQL Playground is accessible at: **http://localhost:4000**
 ### Terminal 2 — Frontend (Static File Server)
 
 ```powershell
-cd d:\scetplacement-main
+cd d:\scetplacement-main\frontend
 python -m http.server 3000
 ```
 

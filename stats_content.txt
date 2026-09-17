@@ -1,0 +1,233 @@
+        <main class="app-body border">
+            <!-- page header, Breadcrumb and page action btn -->
+            <div class="page-header py-2 py-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    <div class="row align-items-center mb-3 mb-lg-0">
+                        <div class="col-12 col-md-auto mb-3 mb-md-0">
+                            <!-- page title -->
+                            <div class="page-title d-flex align-items-center gap-2 mb-2">
+                                <h4 class="mb-0">My Stats & Analytics</h4>
+                            </div>
+                            <!-- breadcrumb -->
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">My Stats</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page content -->
+            <div class="page-content pt-0 pb-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    
+                    <!-- Overview KPI Cards -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <h6 class="text-secondary mb-2">Overall Readiness</h6>
+                                <h2 class="fw-bold text-dark mb-0">82%</h2>
+                                <div class="mt-2 text-success small fw-bold"><i class="bi bi-arrow-up-short"></i> 5% this month</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <h6 class="text-secondary mb-2">Interviews Completed</h6>
+                                <h2 class="fw-bold text-dark mb-0">14</h2>
+                                <div class="mt-2 text-secondary small">Across 4 roles</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <h6 class="text-secondary mb-2">Avg. Filler Words</h6>
+                                <h2 class="fw-bold text-dark mb-0">4.2</h2>
+                                <div class="mt-2 text-danger small fw-bold"><i class="bi bi-arrow-down-short"></i> Improving</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <h6 class="text-secondary mb-2">Technical Score</h6>
+                                <h2 class="fw-bold text-primary mb-0">8.5/10</h2>
+                                <div class="mt-2 text-secondary small">Top 15% of peers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row g-4 mb-4">
+                        <!-- Radar Chart -->
+                        <div class="col-12 col-lg-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100">
+                                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                                    <h5 class="fw-bold mb-0">Skill Radar</h5>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <div id="radarChart" style="width: 100%; min-height: 350px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bar Chart -->
+                        <div class="col-12 col-lg-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100">
+                                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                                    <h5 class="fw-bold mb-0">Recent Interview Scores</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div id="barChart" style="width: 100%; min-height: 350px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strengths and Weaknesses -->
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <div class="card border-0 shadow-sm rounded-4 border-start border-success border-4 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="bi bi-arrow-up-circle-fill text-success fs-4"></i>
+                                        <h5 class="fw-bold mb-0">Top Strengths</h5>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-check2 text-success mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">Data Structures</strong>
+                                                <span class="text-secondary small">Consistently scores high in array and graph optimization problems.</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-check2 text-success mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">Clear Communication</strong>
+                                                <span class="text-secondary small">Explains thought processes logically before writing code.</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-check2 text-success mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">System Design</strong>
+                                                <span class="text-secondary small">Strong understanding of caching and load balancing concepts.</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <div class="card border-0 shadow-sm rounded-4 border-start border-danger border-4 h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="bi bi-arrow-down-circle-fill text-danger fs-4"></i>
+                                        <h5 class="fw-bold mb-0">Areas to Improve</h5>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-exclamation-circle text-danger mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">Dynamic Programming</strong>
+                                                <span class="text-secondary small">Struggles with state transitions and space optimization.</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-exclamation-circle text-danger mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">Speech Delivery</strong>
+                                                <span class="text-secondary small">High frequency of filler words ('um', 'like') when stuck.</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-transparent px-0 border-0 d-flex gap-3">
+                                            <i class="bi bi-exclamation-circle text-danger mt-1"></i>
+                                            <div>
+                                                <strong class="d-block text-dark">Edge Cases</strong>
+                                                <span class="text-secondary small">Often forgets to test edge cases (null inputs, empty arrays) before submitting.</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize ApexCharts after a short delay to ensure DOM is ready
+                setTimeout(() => {
+                    // Radar Chart
+                    if (document.querySelector("#radarChart") && typeof ApexCharts !== 'undefined') {
+                        var radarOptions = {
+                            series: [{
+                                name: 'Your Score',
+                                data: [85, 90, 70, 80, 65, 88],
+                            }, {
+                                name: 'Peer Average',
+                                data: [75, 80, 75, 70, 70, 75],
+                            }],
+                            chart: {
+                                height: 350,
+                                type: 'radar',
+                                toolbar: { show: false }
+                            },
+                            stroke: {
+                                width: 2
+                            },
+                            fill: {
+                                opacity: 0.2
+                            },
+                            markers: {
+                                size: 4
+                            },
+                            xaxis: {
+                                categories: ['Algorithms', 'Comm.', 'Sys Design', 'Logic', 'DB Mgmt', 'React']
+                            },
+                            colors: ['#0d6efd', '#adb5bd']
+                        };
+                        var radarChart = new ApexCharts(document.querySelector("#radarChart"), radarOptions);
+                        radarChart.render();
+                    }
+
+                    // Bar Chart
+                    if (document.querySelector("#barChart") && typeof ApexCharts !== 'undefined') {
+                        var barOptions = {
+                            series: [{
+                                name: 'Interview Score',
+                                data: [65, 72, 70, 84, 88]
+                            }],
+                            chart: {
+                                height: 350,
+                                type: 'bar',
+                                toolbar: { show: false }
+                            },
+                            plotOptions: {
+                                bar: {
+                                    borderRadius: 4,
+                                    columnWidth: '40%',
+                                }
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function (val) {
+                                    return val + "%";
+                                }
+                            },
+                            xaxis: {
+                                categories: ['Mock #1', 'Mock #2', 'Mock #3', 'Mock #4', 'Mock #5'],
+                                position: 'bottom',
+                            },
+                            colors: ['#198754']
+                        };
+                        var barChart = new ApexCharts(document.querySelector("#barChart"), barOptions);
+                        barChart.render();
+                    }
+                }, 500);
+            });
+        </script>

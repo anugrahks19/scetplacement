@@ -75,6 +75,7 @@ export const questionTypeDefs = `#graphql
     content: String
     explanation: String
     tags: [String!]
+    testCases: [TestCaseInput!]
   }
 
   type BulkImportResult {

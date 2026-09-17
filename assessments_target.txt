@@ -1,0 +1,262 @@
+        <main class="app-body border bg-light">
+
+    <!-- Header Hero -->
+    <div class="page-header py-4 p-lg-5 text-white rounded-bottom-4 shadow-sm" style="background: linear-gradient(135deg, var(--bs-primary), #6366f1);">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="align-items-lg-start d-flex flex-column justify-content-center">
+                    <h1 class="fs-2 section-title mb-1 fw-bold">My Assessments</h1>
+                    <p class="mb-0 opacity-75 fs-6">Prepare, track, and master your placement tests.</p>
+                </div>
+                <div class="d-flex gap-2 mt-3 mt-lg-0">
+                    <button class="btn btn-light rounded-pill px-4 fw-semibold text-primary shadow-sm"><i class="bi bi-file-earmark-bar-graph me-2"></i> View Report</button>
+                    <button class="btn btn-outline-light rounded-pill px-4 fw-semibold"><i class="bi bi-arrow-repeat me-2"></i> Sync Past Scores</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-4 p-lg-5 mt-n4">
+        <div class="container-fluid">
+            
+            <!-- Quick Stats -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="card-body p-4 position-relative">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="text-muted fw-semibold mb-0">Total Attempted</h6>
+                                <div class="icon-box bg-primary-subtle text-primary rounded-3 p-2">
+                                    <i class="bi bi-journal-check fs-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="display-5 fw-bold mb-0">14</h2>
+                            <p class="text-success small mb-0 mt-2"><i class="bi bi-arrow-up me-1"></i>2 this week</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="card-body p-4 position-relative">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="text-muted fw-semibold mb-0">Average Score</h6>
+                                <div class="icon-box bg-success-subtle text-success rounded-3 p-2">
+                                    <i class="bi bi-graph-up-arrow fs-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="display-5 fw-bold mb-0">78%</h2>
+                            <p class="text-success small mb-0 mt-2"><i class="bi bi-arrow-up me-1"></i>5% improvement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="card-body p-4 position-relative">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="text-muted fw-semibold mb-0">Rank</h6>
+                                <div class="icon-box bg-warning-subtle text-warning rounded-3 p-2">
+                                    <i class="bi bi-trophy fs-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="display-5 fw-bold mb-0">42<span class="fs-6 text-muted">/120</span></h2>
+                            <p class="text-success small mb-0 mt-2"><i class="bi bi-arrow-up me-1"></i>Top 35% of class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden bg-primary text-white">
+                        <div class="card-body p-4 position-relative z-1">
+                            <h5 class="fw-bold mb-3">Upcoming Test</h5>
+                            <p class="mb-1 opacity-75 small">TCS NQT National Mock</p>
+                            <h4 class="fw-bold mb-3">Starts in 2 days</h4>
+                            <button class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary w-100">Set Reminder</button>
+                        </div>
+                        <i class="bi bi-clock-history position-absolute end-0 bottom-0 opacity-10" style="font-size: 100px; margin-bottom: -20px; margin-right: -10px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-4 gap-2" id="assessmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-4 fw-semibold" id="active-tab" data-bs-toggle="pill" data-bs-target="#active" type="button" role="tab">Active & Upcoming</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-4 fw-semibold bg-white text-muted border shadow-sm" id="completed-tab" data-bs-toggle="pill" data-bs-target="#completed" type="button" role="tab">Completed</button>
+                </li>
+                <li class="nav-item ms-auto">
+                    <div class="input-group input-group-sm bg-white border rounded-pill overflow-hidden shadow-sm">
+                        <span class="input-group-text bg-white border-0"><i class="bi bi-search text-muted"></i></span>
+                        <input type="text" class="form-control border-0 bg-transparent shadow-none" placeholder="Search tests...">
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="assessmentTabsContent">
+                <!-- Active Tests -->
+                <div class="tab-pane fade show active" id="active" role="tabpanel">
+                    <div class="row g-4">
+                        
+                        <!-- Card 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift transition-all">
+                                <div class="card-header bg-transparent border-0 pt-4 pb-0 px-4 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-danger-subtle text-danger rounded-pill fw-semibold px-3 py-2">Hard</span>
+                                    <span class="text-muted small fw-semibold"><i class="bi bi-clock me-1"></i> 90 mins</span>
+                                </div>
+                                <div class="card-body px-4 py-3">
+                                    <h5 class="fw-bold text-dark mb-1">Amazon SDE 1 Coding Round</h5>
+                                    <p class="text-muted small mb-3">DSA focus: Graphs, DP, Trees.</p>
+                                    
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="avatar-group me-2">
+                                            <div class="avatar avatar-sm bg-primary text-white rounded-circle fs-10 fw-bold border border-2 border-white z-3">SC</div>
+                                            <div class="avatar avatar-sm bg-info text-white rounded-circle fs-10 fw-bold border border-2 border-white z-2" style="margin-left:-10px;">PR</div>
+                                        </div>
+                                        <span class="small text-muted fw-medium">+45 others registered</span>
+                                    </div>
+                                    
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pb-4 px-4">
+                                    <button class="btn btn-primary w-100 rounded-pill fw-semibold py-2">Start Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift transition-all">
+                                <div class="card-header bg-transparent border-0 pt-4 pb-0 px-4 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-warning-subtle text-warning rounded-pill fw-semibold px-3 py-2">Medium</span>
+                                    <span class="text-muted small fw-semibold"><i class="bi bi-clock me-1"></i> 60 mins</span>
+                                </div>
+                                <div class="card-body px-4 py-3">
+                                    <h5 class="fw-bold text-dark mb-1">Infosys Pseudo Code Test</h5>
+                                    <p class="text-muted small mb-3">Core computer science and logical reasoning.</p>
+                                    
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="avatar-group me-2">
+                                            <div class="avatar avatar-sm bg-success text-white rounded-circle fs-10 fw-bold border border-2 border-white z-3">AK</div>
+                                        </div>
+                                        <span class="small text-muted fw-medium">+120 others registered</span>
+                                    </div>
+                                    
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="text-end small text-muted mt-1 mb-0 fs-11">Resume (25% done)</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pb-4 px-4">
+                                    <button class="btn btn-outline-primary w-100 rounded-pill fw-semibold py-2">Continue Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift transition-all bg-light border border-primary border-opacity-25">
+                                <div class="card-header bg-transparent border-0 pt-4 pb-0 px-4 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success-subtle text-success rounded-pill fw-semibold px-3 py-2">Easy</span>
+                                    <span class="text-muted small fw-semibold"><i class="bi bi-calendar3 me-1"></i> Oct 24</span>
+                                </div>
+                                <div class="card-body px-4 py-3">
+                                    <h5 class="fw-bold text-dark mb-1">TCS NQT Aptitude Mock</h5>
+                                    <p class="text-muted small mb-3">Numerical ability, verbal, and reasoning.</p>
+                                    
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="text-primary fw-bold fs-5 me-2">Starts in 2d</div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pb-4 px-4">
+                                    <button class="btn btn-secondary w-100 rounded-pill fw-semibold py-2" disabled>Locked</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Completed Tests -->
+                <div class="tab-pane fade" id="completed" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="bg-light text-muted small fw-semibold text-uppercase">
+                                        <tr>
+                                            <th class="ps-4 py-3 border-0 rounded-top-start-4">Assessment Name</th>
+                                            <th class="py-3 border-0">Date Taken</th>
+                                            <th class="py-3 border-0">Score</th>
+                                            <th class="py-3 border-0">Percentile</th>
+                                            <th class="pe-4 py-3 border-0 rounded-top-end-4 text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="border-top-0">
+                                        <tr>
+                                            <td class="ps-4 py-3 border-bottom border-light">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-primary-subtle text-primary rounded-3 p-2 me-3">
+                                                        <i class="bi bi-code-slash fs-5"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Wipro Elite Coding Mock</h6>
+                                                        <span class="text-muted small">C++ / Java / Python</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 border-bottom border-light text-muted small">Sep 15, 2026</td>
+                                            <td class="py-3 border-bottom border-light">
+                                                <span class="badge bg-success rounded-pill px-3 py-1 fw-bold fs-6">85/100</span>
+                                            </td>
+                                            <td class="py-3 border-bottom border-light">
+                                                <span class="text-dark fw-semibold">92nd</span>
+                                            </td>
+                                            <td class="pe-4 py-3 border-bottom border-light text-end">
+                                                <button class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold">View Analysis</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4 py-3 border-bottom border-light">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-info-subtle text-info rounded-3 p-2 me-3">
+                                                        <i class="bi bi-chat-left-text fs-5"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Accenture Verbal Ability</h6>
+                                                        <span class="text-muted small">Grammar, RC, Vocab</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 border-bottom border-light text-muted small">Sep 10, 2026</td>
+                                            <td class="py-3 border-bottom border-light">
+                                                <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold fs-6">62/100</span>
+                                            </td>
+                                            <td class="py-3 border-bottom border-light">
+                                                <span class="text-dark fw-semibold">54th</span>
+                                            </td>
+                                            <td class="pe-4 py-3 border-bottom border-light text-end">
+                                                <button class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold">View Analysis</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <style>
+        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; }
+        .nav-pills .nav-link.active { background-color: var(--bs-primary); color: white; box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.4); }
+    </style>
+        </main>

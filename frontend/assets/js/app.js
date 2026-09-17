@@ -376,6 +376,137 @@ Last change:    19 June, 2026
         }
     });
 
+    // === SPA ROUTING LOGIC ===
+    // This intercepts internal links to maintain the universal shell layout
+    
+    // Save initial state
+    const initialBody = document.querySelector('.app-body') || document.querySelector('.content-wrapper') || document.querySelector('main');
+    if (initialBody && !window.history.state) {
+        window.history.replaceState({ 
+            html: initialBody.innerHTML, 
+            className: initialBody.className,
+            scripts: [] 
+        }, '');
+    }
 
+    // Handle deep linking on initial load
+    if (window.location.hash && window.location.hash.length > 1) {
+        const targetHref = window.location.hash.substring(1);
+        fetchAndSwap(targetHref, false);
+    }
+
+    async function fetchAndSwap(href, pushToHistory = true) {
+        const appBody = document.querySelector('.app-body') || document.querySelector('.content-wrapper') || document.querySelector('main');
+        if (!appBody) return false;
+        
+        appBody.style.opacity = '0.5';
+
+        try {
+            const response = await fetch(href);
+            if (!response.ok) throw new Error('Network response was not ok');
+            
+            const htmlText = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+            const newAppBody = doc.querySelector('.app-body') || doc.querySelector('.content-wrapper') || doc.querySelector('main');
+            
+            if (newAppBody) {
+                appBody.innerHTML = newAppBody.innerHTML;
+                appBody.className = newAppBody.className; 
+                appBody.style.opacity = '1';
+                
+                const customScripts = [];
+                doc.querySelectorAll('script').forEach(s => {
+                    if (s.src && (s.src.includes('vendor/') || s.src.includes('app.js') || s.src.includes('jquery') || s.src.includes('bootstrap'))) return;
+                    if (s.innerHTML.includes('document.write')) return;
+                    
+                    customScripts.push({
+                        src: s.getAttribute('src'),
+                        innerHTML: s.innerHTML
+                    });
+                });
+                
+                if (pushToHistory) {
+                    window.history.pushState({ 
+                        html: newAppBody.innerHTML, 
+                        className: newAppBody.className,
+                        scripts: customScripts
+                    }, '', '#' + href);
+                }
+                
+                executeScripts(customScripts);
+                
+                // Close offcanvas if mobile
+                const offcanvasMenu = document.getElementById('offcanvasMenu');
+                if (offcanvasMenu) {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasMenu);
+                    if (bsOffcanvas) bsOffcanvas.hide();
+                }
+                
+                window.scrollTo(0, 0);
+                return true;
+            }
+        } catch (error) {
+            console.error('Error fetching page:', error);
+            appBody.style.opacity = '1';
+        }
+        return false;
+    }
+
+    function executeScripts(scriptsData) {
+        if (!scriptsData || !scriptsData.length) return;
+        
+        scriptsData.forEach(scriptObj => {
+            const newScript = document.createElement('script');
+            newScript.className = 'spa-injected-script';
+            if (scriptObj.src) {
+                newScript.src = scriptObj.src;
+            } else if (scriptObj.innerHTML) {
+                let code = scriptObj.innerHTML;
+                code = code.replace(/\blet\s+/g, 'var ').replace(/\bconst\s+/g, 'var ');
+                newScript.appendChild(document.createTextNode(code));
+            }
+            document.body.appendChild(newScript);
+        });
+    }
+
+    document.addEventListener('click', async function(e) {
+        let target = e.target.closest('a');
+        if (!target) return;
+        
+        let href = target.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('javascript:') || href.startsWith('http') || target.hasAttribute('data-bs-toggle') || target.getAttribute('target') === '_blank') {
+            return;
+        }
+
+        if (href.endsWith('index.html') && !href.includes('dashboard')) {
+            return; // Allow logout
+        }
+
+        e.preventDefault();
+        
+        const success = await fetchAndSwap(href, true);
+        if (!success) {
+            window.location.href = href;
+        }
+    });
+
+    window.addEventListener('popstate', function(e) {
+        const appBody = document.querySelector('.app-body') || document.querySelector('.content-wrapper') || document.querySelector('main');
+        if (!appBody) return;
+        
+        if (e.state && e.state.html) {
+            appBody.innerHTML = e.state.html;
+            appBody.className = e.state.className;
+            executeScripts(e.state.scripts);
+        } else {
+            if (window.location.hash && window.location.hash.length > 1) {
+                fetchAndSwap(window.location.hash.substring(1), false);
+            } else {
+                window.location.reload();
+            }
+        }
+    });
 
 })(window, document);
+

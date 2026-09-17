@@ -11,6 +11,13 @@ export class AiService {
    * This acts like NotebookLM: reading a source document/syllabus and generating questions from it.
    */
   async generateQuestions(topic: string, count: number, difficulty: string, sourceContext?: string, questionType?: string) {
+    if (count <= 0 || count > 15) {
+      throw new Error("Count must be between 1 and 15 per batch to avoid provider timeouts.");
+    }
+    if (sourceContext && sourceContext.length > 10000) {
+      throw new Error("Source context exceeds maximum allowed length of 10,000 characters.");
+    }
+
     // We use gemini-3.6-flash which is supported by the current API key
     const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
@@ -21,14 +28,21 @@ export class AiService {
       --- SOURCE MATERIAL END ---
     ` : '';
 
-    const prompt = `
-      You are an expert academic professor creating questions for a placement portal.
-      ${contextPrompt}
-      Generate ${count} ${difficulty} level questions on the topic: "${topic}".
-      
-      Respond STRICTLY in the following JSON array format without any markdown wrappers or additional text:
-      [
-        {
+    const targetType = questionType || 'MCQ';
+    const jsonTemplate = targetType === 'CODING' || targetType === 'DEBUGGING' ? 
+      `{
+          "title": "Question Title",
+          "type": "${targetType}", 
+          "difficulty": "${difficulty.toUpperCase()}",
+          "content": {
+            "text": "The full question problem statement",
+            "starterCode": "function solve() {\\n\\n}",
+            "testCases": [{"input": "5", "output": "10"}]
+          },
+          "explanation": "Explanation of the solution",
+          "tags": ["tag1", "tag2"]
+        }` :
+      `{
           "title": "Question Title/Short summary",
           "type": "MCQ", 
           "difficulty": "${difficulty.toUpperCase()}",
@@ -39,7 +53,18 @@ export class AiService {
           },
           "explanation": "Explanation of the correct answer",
           "tags": ["tag1", "tag2"]
-        }
+        }`;
+
+    const typeDescription = targetType === 'CODING' ? 'coding' : targetType === 'DEBUGGING' ? 'debugging' : 'multiple-choice';
+
+    const prompt = `
+      You are an expert academic professor creating questions for a placement portal.
+      ${contextPrompt}
+      Generate ${count} ${difficulty} level ${typeDescription} questions on the topic: "${topic}".
+      
+      Respond STRICTLY in the following JSON array format without any markdown wrappers or additional text:
+      [
+        ${jsonTemplate}
       ]
     `;
 
@@ -55,7 +80,26 @@ export class AiService {
         text = text.replace(/```/g, '').trim();
       }
 
-      return JSON.parse(text);
+      const parsed = JSON.parse(text);
+      if (!Array.isArray(parsed)) throw new Error("AI did not return an array");
+
+      return parsed.map((q: any) => {
+        if (!q.title || !q.content || !q.difficulty) {
+          throw new Error("Missing required question fields");
+        }
+        q.type = targetType; // Force requested type
+        
+        if (targetType === 'MCQ') {
+          if (!q.content.options || !Array.isArray(q.content.options) || typeof q.content.correctOptionIndex !== 'number') {
+            throw new Error("Invalid MCQ content format from AI");
+          }
+        } else if (targetType === 'CODING' || targetType === 'DEBUGGING') {
+          if (!q.content.text || typeof q.content.starterCode !== 'string' || !Array.isArray(q.content.testCases)) {
+            throw new Error(`Invalid ${targetType} content format from AI`);
+          }
+        }
+        return q;
+      });
     } catch (error) {
       console.warn('Google AI Generation Failed. Using Intelligent Fallback Mock.', (error as Error).message);
       
@@ -160,6 +204,14 @@ export class AiService {
       { type: 'DEBUGGING', difficulty: 'MEDIUM', count: config.debuggingMedium || 0 },
       { type: 'DEBUGGING', difficulty: 'HARD', count: config.debuggingHard || 0 },
     ];
+
+    const totalCount = tasks.reduce((sum, task) => sum + task.count, 0);
+    if (totalCount <= 0 || totalCount > 50) {
+      throw new Error("Aggregate pool size must be between 1 and 50 questions.");
+    }
+    if (sourceContext && sourceContext.length > 10000) {
+      throw new Error("Source context exceeds maximum allowed length of 10,000 characters.");
+    }
 
     for (const task of tasks) {
       if (task.count > 0) {

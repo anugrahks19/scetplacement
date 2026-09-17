@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-theme="theme-indigo" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>File Manager - SCET Placement Cell</title>
+    <link href="../../assets/images/favicon.ico" rel="icon" type="image/png"/>
+    <link href="../../assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../assets/vendor/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="../../assets/css/styles.css" rel="stylesheet"/>
+    <link href="../../assets/css/layout-main.css" rel="stylesheet"/>
+</head>
+<body class="layout-main">
+<div class="app-wrapper">
+    <header class="sticky-top px-lg-3">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between py-2">
+                <div class="d-flex gap-2 align-items-center flex-fill">
+                    <a aria-label="DSA &amp; CP" class="brand text-decoration-none d-flex gap-2 align-items-center d-lg-none me-auto" href="../dashboard-student.html">
+                        <span class="fs-4 fw-bold d-none d-sm-inline-block d-lg-none">DashQ</span>
+                    </a>
+                    <button aria-label="Light/Dark toggle theme" class="btn icon-button border-0" id="themeToggle"><i class="bi bi-sun"></i></button>
+                    <div class="ms-3 d-none d-md-flex gap-2">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2">Computer Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container-fluid p-xl-4 p-sm-3 p-0 mb-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-2 mb-4">
+                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">File Manager</li>
+                </ol>
+            </nav>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="../dashboard-student.html" class="btn btn-sm btn-light border rounded-circle" aria-label="Back"><i class="bi bi-arrow-left"></i></a>
+                    <h4 class="mb-0 fw-bold">My Drive</h4>
+                </div>
+                <button class="btn btn-primary rounded-pill px-4"><i class="bi bi-upload me-2"></i>Upload File</button>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="border-bottom-0 py-3 ps-4 rounded-start-4">Name</th>
+                                    <th class="border-bottom-0 py-3">Size</th>
+                                    <th class="border-bottom-0 py-3">Last Modified</th>
+                                    <th class="border-bottom-0 py-3 rounded-end-4 text-end pe-4">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar bg-danger-subtle text-danger rounded-3"><i class="bi bi-file-earmark-pdf fs-5"></i></div>
+                                            <h6 class="mb-0 fw-semibold">Anugrah_KS_Resume_2026.pdf</h6>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted small">1.2 MB</td>
+                                    <td class="text-muted small">Oct 12, 2026</td>
+                                    <td class="text-end pe-4">
+                                        <a href="../../assets/images/dummy_resume.jpg" target="_blank" class="btn btn-sm btn-light border me-1" title="View"><i class="bi bi-eye"></i></a>
+                                        <button class="btn btn-sm btn-light border"><i class="bi bi-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar bg-primary-subtle text-primary rounded-3"><i class="bi bi-file-earmark-word fs-5"></i></div>
+                                            <h6 class="mb-0 fw-semibold">Cover_Letter_TCS.docx</h6>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted small">450 KB</td>
+                                    <td class="text-muted small">Oct 14, 2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-light border me-1"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-light border"><i class="bi bi-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar bg-success-subtle text-success rounded-3"><i class="bi bi-image fs-5"></i></div>
+                                            <h6 class="mb-0 fw-semibold">Professional_Headshot.jpg</h6>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted small">3.5 MB</td>
+                                    <td class="text-muted small">Sep 20, 2026</td>
+                                    <td class="text-end pe-4">
+                                        <button class="btn btn-sm btn-light border me-1"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm btn-light border"><i class="bi bi-download"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="../../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/student_backend_integration.js"></script>
+</body>
+</html>

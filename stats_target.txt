@@ -1,0 +1,180 @@
+        <main class="app-body border bg-light">
+
+    <!-- Header Hero -->
+    <div class="page-header py-4 p-lg-5 text-white rounded-bottom-4 shadow-sm" style="background: linear-gradient(135deg, #10b981, #047857);">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="align-items-lg-start d-flex flex-column justify-content-center">
+                    <h1 class="fs-2 section-title mb-1 fw-bold">My Stats & Readiness</h1>
+                    <p class="mb-0 opacity-75 fs-6">Analyze your strengths and identify areas for improvement.</p>
+                </div>
+                <div class="d-flex gap-2 mt-3 mt-lg-0">
+                    <button class="btn btn-light rounded-pill px-4 fw-semibold text-success shadow-sm"><i class="bi bi-download me-2"></i> Download PDF Report</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-4 p-lg-5 mt-n4">
+        <div class="container-fluid">
+            
+            <div class="row g-4 mb-4">
+                <!-- Overall Score -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden text-center position-relative">
+                        <div class="card-body p-5">
+                            <h5 class="fw-bold text-muted mb-4">Overall Placement Readiness</h5>
+                            
+                            <div class="position-relative d-inline-block mx-auto mb-4">
+                                <svg viewBox="0 0 36 36" class="circular-chart text-success" style="width: 150px; height: 150px;">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e6e6e6" stroke-width="3.8"/>
+                                    <path class="circle" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#10b981" stroke-width="3.8" stroke-linecap="round" animation="progress 1s ease-out forwards"/>
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                    <h2 class="fw-bold mb-0 text-success display-5">82%</h2>
+                                </div>
+                            </div>
+                            
+                            <p class="text-muted fw-semibold">You are highly prepared for <strong class="text-dark">Software Engineer</strong> roles.</p>
+                            <div class="bg-success-subtle text-success fw-bold rounded-pill py-2 px-3 d-inline-block mx-auto mt-2">
+                                <i class="bi bi-graph-up-arrow me-1"></i> Top 15% in Batch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Radars -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-header bg-white border-0 pt-4 px-4 pb-0 d-flex justify-content-between align-items-center">
+                            <h5 class="fw-bold mb-0">Skill Breakdown</h5>
+                            <ul class="nav nav-pills gap-1" id="skillTabs" role="tablist">
+                                <li class="nav-item"><button class="btn btn-sm btn-primary rounded-pill px-3 active" data-bs-toggle="pill">Technical</button></li>
+                                <li class="nav-item"><button class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="pill">Aptitude</button></li>
+                            </ul>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row g-4 align-items-center h-100">
+                                <div class="col-md-6 text-center">
+                                    <!-- A pure CSS or simulated radar chart using layered HTML for aesthetics, or just simple progress bars for the skills -->
+                                    <h6 class="fw-bold text-muted text-start mb-4">Core Competencies</h6>
+                                    
+                                    <div class="mb-3 text-start">
+                                        <div class="d-flex justify-content-between align-items-end mb-1">
+                                            <span class="fw-bold small text-dark">Data Structures & Algorithms</span>
+                                            <span class="small text-primary fw-bold">88%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: 88%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 text-start">
+                                        <div class="d-flex justify-content-between align-items-end mb-1">
+                                            <span class="fw-bold small text-dark">Object Oriented Programming</span>
+                                            <span class="small text-info fw-bold">92%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-info rounded-pill" role="progressbar" style="width: 92%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 text-start">
+                                        <div class="d-flex justify-content-between align-items-end mb-1">
+                                            <span class="fw-bold small text-dark">Databases (SQL/NoSQL)</span>
+                                            <span class="small text-warning fw-bold">75%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-warning rounded-pill" role="progressbar" style="width: 75%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 text-start">
+                                        <div class="d-flex justify-content-between align-items-end mb-1">
+                                            <span class="fw-bold small text-dark">System Design</span>
+                                            <span class="small text-danger fw-bold">45%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-danger rounded-pill" role="progressbar" style="width: 45%;"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 border-start ps-md-4">
+                                    <h6 class="fw-bold text-muted mb-4">Strengths & Weaknesses</h6>
+                                    
+                                    <div class="alert alert-success border-0 bg-success-subtle shadow-sm rounded-4 mb-3 d-flex align-items-start">
+                                        <i class="bi bi-lightning-charge-fill text-success fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="fw-bold text-success mb-1">Excellent in Algorithms</h6>
+                                            <p class="small mb-0 opacity-75">Your graph and DP solving speed is top-tier.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="alert alert-warning border-0 bg-warning-subtle shadow-sm rounded-4 d-flex align-items-start">
+                                        <i class="bi bi-exclamation-triangle-fill text-warning fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="fw-bold text-warning mb-1">Needs Work: System Design</h6>
+                                            <p class="small mb-0 opacity-75 text-dark">Consider taking mock system design interviews.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-outline-dark w-100 rounded-pill fw-semibold mt-2">Generate Study Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed History -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                    <h5 class="fw-bold mb-0">Recent Assessments Performance</h5>
+                </div>
+                <div class="card-body p-0 mt-3">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="bg-light text-muted small fw-semibold text-uppercase">
+                                <tr>
+                                    <th class="ps-4 py-3 border-0">Assessment</th>
+                                    <th class="py-3 border-0">Type</th>
+                                    <th class="py-3 border-0">Score</th>
+                                    <th class="py-3 border-0">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border-top-0">
+                                <tr>
+                                    <td class="ps-4 py-3 border-bottom border-light fw-bold text-dark">Wipro Elite Mock</td>
+                                    <td class="py-3 border-bottom border-light"><span class="badge bg-light text-dark rounded-pill">Coding</span></td>
+                                    <td class="py-3 border-bottom border-light fw-bold">85%</td>
+                                    <td class="py-3 border-bottom border-light"><span class="text-success fw-bold"><i class="bi bi-check-circle-fill me-1"></i> Cleared</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 py-3 border-bottom border-light fw-bold text-dark">TCS NQT Aptitude</td>
+                                    <td class="py-3 border-bottom border-light"><span class="badge bg-light text-dark rounded-pill">Aptitude</span></td>
+                                    <td class="py-3 border-bottom border-light fw-bold">62%</td>
+                                    <td class="py-3 border-bottom border-light"><span class="text-danger fw-bold"><i class="bi bi-x-circle-fill me-1"></i> Needs Practice</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 py-3 border-bottom border-light fw-bold text-dark">Cognizant GenC</td>
+                                    <td class="py-3 border-bottom border-light"><span class="badge bg-light text-dark rounded-pill">Mixed</span></td>
+                                    <td class="py-3 border-bottom border-light fw-bold">78%</td>
+                                    <td class="py-3 border-bottom border-light"><span class="text-success fw-bold"><i class="bi bi-check-circle-fill me-1"></i> Cleared</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <style>
+        .circular-chart { display: block; margin: 0 auto; max-width: 80%; max-height: 250px; }
+        .circle-bg { fill: none; stroke: #eee; stroke-width: 3.8; }
+        .circle { fill: none; stroke-width: 2.8; stroke-linecap: round; animation: progress 1s ease-out forwards; }
+        @keyframes progress { 0% { stroke-dasharray: 0 100; } }
+    </style>
+        </main>

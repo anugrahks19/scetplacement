@@ -22,11 +22,7 @@ export const aiResolvers = {
       
       const generated = await aiService.generateQuestions(topic, count, difficulty, sourceContext, type);
       
-      // Ensure content object is serialized to string for GraphQL response 
-      return generated.map((q: any) => ({
-        ...q,
-        content: JSON.stringify(q.content)
-      }));
+      return generated;
     },
     generateQuestionBankWithAi: async (_: any, { topic, count, difficulty, sourceContext, type, categoryId, topicId }: any, context: any) => {
       if (context.user.role !== 'TEACHER') throw new Error('Unauthorized');
@@ -41,7 +37,7 @@ export const aiResolvers = {
             title: q.title,
             type: questionType,
             difficulty: q.difficulty.toUpperCase(),
-            content: JSON.stringify(q.content),
+            content: q.content,
             explanation: q.explanation || '',
             tags: q.tags || [],
             organizationId: context.user.organizationId,
@@ -69,7 +65,7 @@ export const aiResolvers = {
             title: q.title,
             type: q.type,
             difficulty: q.difficulty.toUpperCase(),
-            content: JSON.stringify(q.content),
+            content: q.content,
             explanation: q.explanation || '',
             tags: q.tags || [],
             organizationId: context.user.organizationId,

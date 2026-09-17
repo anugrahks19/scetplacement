@@ -88,15 +88,18 @@ export class AssessmentService {
    * Add a section to an assessment.
    */
   async addSectionToAssessment(assessmentId: string, name: string, order: number, organizationId: string) {
-    const assessment = await prisma.assessment.findUnique({ where: { id: assessmentId } });
-    if (!assessment || assessment.organizationId !== organizationId) throw new Error("Assessment not found");
+    return prisma.$transaction(async (tx) => {
+      const assessment = await tx.assessment.findUnique({ where: { id: assessmentId } });
+      if (!assessment || assessment.organizationId !== organizationId) throw new Error("Assessment not found");
+      if (assessment.status !== AssessmentStatus.DRAFT) throw new Error("Structural changes are only allowed in DRAFT state");
 
-    return prisma.assessmentSection.create({
-      data: {
-        assessmentId,
-        name,
-        order,
-      }
+      return tx.assessmentSection.create({
+        data: {
+          assessmentId,
+          name,
+          order,
+        }
+      });
     });
   }
 
@@ -104,25 +107,51 @@ export class AssessmentService {
    * Add a question to an assessment section.
    */
   async addQuestionToSection(sectionId: string, questionId: string, marks: number, order: number, organizationId: string) {
-    // Basic org verification could be extended to verify section belongs to the org
-    return prisma.assessmentItem.create({
-      data: {
-        sectionId,
-        questionId,
-        marks,
-        order,
+    return prisma.$transaction(async (tx) => {
+      const section = await tx.assessmentSection.findUnique({
+        where: { id: sectionId },
+        include: { assessment: true }
+      });
+      if (!section || section.assessment.organizationId !== organizationId) {
+        throw new Error("Section not found");
       }
+      if (section.assessment.status !== AssessmentStatus.DRAFT) {
+        throw new Error("Structural changes are only allowed in DRAFT state");
+      }
+
+      const question = await tx.question.findUnique({ where: { id: questionId } });
+      if (!question || question.organizationId !== organizationId) {
+        throw new Error("Question not found");
+      }
+
+      return tx.assessmentItem.create({
+        data: { sectionId, questionId, marks, order }
+      });
     });
   }
 
   /**
    * Remove a question from a section.
    */
-  async removeQuestionFromSection(itemId: string) {
-    await prisma.assessmentItem.delete({
-      where: { id: itemId },
+  async removeQuestionFromSection(itemId: string, organizationId: string) {
+    return prisma.$transaction(async (tx) => {
+      const item = await tx.assessmentItem.findUnique({
+        where: { id: itemId },
+        include: { section: { include: { assessment: true } } }
+      });
+      
+      if (!item || item.section.assessment.organizationId !== organizationId) {
+        throw new Error("Item not found");
+      }
+      if (item.section.assessment.status !== AssessmentStatus.DRAFT) {
+        throw new Error("Structural changes are only allowed in DRAFT state");
+      }
+      
+      await tx.assessmentItem.delete({
+        where: { id: itemId },
+      });
+      return true;
     });
-    return true;
   }
 
   /**
@@ -168,36 +197,52 @@ export class AssessmentService {
    * Guard: must have >= 1 section with >= 1 PUBLISHED question.
    */
   async publishAssessment(id: string, organizationId: string) {
-    const assessment = await this.getAssessmentById(id, organizationId);
-    if (!assessment) throw new Error("Assessment not found");
-
-    if (assessment.sections.length === 0) {
-      throw new Error("Assessment must have at least one section to be published");
-    }
-
-    let hasValidQuestions = true;
-    for (const section of assessment.sections) {
-      if (section.items.length === 0) {
-        hasValidQuestions = false;
-        break;
+    return prisma.$transaction(async (tx) => {
+      // Need to find unique inside transaction to ensure state hasn't changed
+      const assessment = await tx.assessment.findUnique({
+        where: { id },
+        include: {
+          sections: {
+            include: { items: { include: { question: true }, orderBy: { order: 'asc' } } },
+            orderBy: { order: 'asc' }
+          }
+        }
+      });
+      
+      if (!assessment || assessment.organizationId !== organizationId) throw new Error("Assessment not found");
+      
+      if (assessment.status !== AssessmentStatus.DRAFT && assessment.status !== AssessmentStatus.SCHEDULED) {
+        throw new Error("Can only publish DRAFT or SCHEDULED assessments");
       }
-      for (const item of section.items) {
-        if (item.question.status !== QuestionStatus.PUBLISHED) {
-          throw new Error(`Question ${item.question.id} is not PUBLISHED. Cannot publish assessment.`);
+
+      if (assessment.sections.length === 0) {
+        throw new Error("Assessment must have at least one section to be published");
+      }
+
+      let hasValidQuestions = true;
+      for (const section of assessment.sections) {
+        if (section.items.length === 0) {
+          hasValidQuestions = false;
+          break;
+        }
+        for (const item of section.items) {
+          if (item.question.status !== QuestionStatus.PUBLISHED) {
+            throw new Error(`Question ${item.question.id} is not PUBLISHED. Cannot publish assessment.`);
+          }
         }
       }
-    }
 
-    if (!hasValidQuestions) {
-      throw new Error("Each section must have at least one question");
-    }
-
-    return prisma.assessment.update({
-      where: { id },
-      data: {
-        status: AssessmentStatus.PUBLISHED,
-        publishedAt: new Date(),
+      if (!hasValidQuestions) {
+        throw new Error("Each section must have at least one question");
       }
+
+      return tx.assessment.update({
+        where: { id },
+        data: {
+          status: AssessmentStatus.PUBLISHED,
+          publishedAt: new Date(),
+        }
+      });
     });
   }
 
@@ -205,9 +250,19 @@ export class AssessmentService {
    * Close an assessment manually.
    */
   async closeAssessment(id: string, organizationId: string) {
-    return prisma.assessment.update({
-      where: { id },
-      data: { status: AssessmentStatus.CLOSED },
+    return prisma.$transaction(async (tx) => {
+      const assessment = await tx.assessment.findUnique({ where: { id } });
+      if (!assessment || assessment.organizationId !== organizationId) {
+        throw new Error("Assessment not found");
+      }
+      if (assessment.status !== AssessmentStatus.PUBLISHED) {
+        throw new Error("Can only close PUBLISHED assessments");
+      }
+
+      return tx.assessment.update({
+        where: { id },
+        data: { status: AssessmentStatus.CLOSED },
+      });
     });
   }
 }

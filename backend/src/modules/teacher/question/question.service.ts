@@ -73,8 +73,23 @@ export class QuestionService {
     const validData = updateQuestionSchema.parse(data);
     const { testCases, ...questionData } = validData;
 
-    // Optional: test case updates (would require deleting old and recreating in a real scenario)
-    // For simplicity, we just update the main question details here.
+    if (testCases) {
+      return prisma.$transaction(async (tx) => {
+        await tx.testCase.deleteMany({ where: { questionId: id } });
+        return tx.question.update({
+          where: { id },
+          data: {
+            ...questionData,
+            updatedById,
+            version: question.version + 1,
+            testCases: {
+              create: testCases,
+            }
+          },
+          include: { testCases: true },
+        });
+      });
+    }
 
     return prisma.question.update({
       where: { id },
@@ -95,7 +110,7 @@ export class QuestionService {
     if (!question || question.organizationId !== organizationId) throw new Error("Question not found.");
     if (question.status !== QuestionStatus.DRAFT) throw new Error("Only DRAFT questions can be submitted for review.");
 
-    return prisma.$transaction([
+    const [updatedQuestion] = await prisma.$transaction([
       prisma.question.update({
         where: { id },
         data: { status: QuestionStatus.PENDING_REVIEW },
@@ -108,6 +123,8 @@ export class QuestionService {
         }
       })
     ]);
+    
+    return updatedQuestion;
   }
 
   /**
@@ -118,7 +135,7 @@ export class QuestionService {
     if (!question || question.organizationId !== organizationId) throw new Error("Question not found.");
     if (question.status !== QuestionStatus.PENDING_REVIEW) throw new Error("Question is not pending review.");
 
-    return prisma.$transaction([
+    const [updatedQuestion] = await prisma.$transaction([
       prisma.question.update({
         where: { id },
         data: { status: QuestionStatus.APPROVED },
@@ -132,6 +149,8 @@ export class QuestionService {
         }
       })
     ]);
+
+    return updatedQuestion;
   }
 
   /**
@@ -175,7 +194,7 @@ export class QuestionService {
       throw new Error("Question cannot be rejected from its current state.");
     }
 
-    return prisma.$transaction([
+    const [updatedQuestion] = await prisma.$transaction([
       prisma.question.update({
         where: { id },
         data: { status: QuestionStatus.REJECTED },
@@ -189,6 +208,8 @@ export class QuestionService {
         }
       })
     ]);
+
+    return updatedQuestion;
   }
 
   /**
@@ -198,15 +219,20 @@ export class QuestionService {
     const question = await prisma.question.findUnique({ where: { id } });
     if (!question || question.organizationId !== organizationId) throw new Error("Question not found.");
 
-    // Delete associated test cases first
-    await prisma.testCase.deleteMany({ where: { questionId: id } });
-    
-    // Delete review logs
-    await prisma.questionReviewLog.deleteMany({ where: { questionId: id } });
+    return prisma.$transaction(async (tx) => {
+      // Delete associated test cases first
+      await tx.testCase.deleteMany({ where: { questionId: id } });
+      
+      // Delete review logs
+      await tx.questionReviewLog.deleteMany({ where: { questionId: id } });
 
-    // Delete question
-    return prisma.question.delete({
-      where: { id }
+      // Delete assessment items referencing this question
+      await tx.assessmentItem.deleteMany({ where: { questionId: id } });
+
+      // Delete question
+      return tx.question.delete({
+        where: { id }
+      });
     });
   }
 

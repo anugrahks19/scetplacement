@@ -1,0 +1,182 @@
+        <main class="app-body border bg-white p-0 overflow-hidden d-flex flex-column" style="height: calc(100vh - 70px);">
+
+    <!-- Header Hero (Slim for App) -->
+    <div class="px-4 py-3 bg-white border-bottom d-flex justify-content-between align-items-center flex-shrink-0 z-2 shadow-sm relative">
+        <div class="d-flex align-items-center gap-3">
+            <h4 class="fw-bold mb-0 text-dark"><i class="bi bi-envelope-at-fill text-primary me-2"></i> Placement Inbox</h4>
+            <span class="badge bg-danger rounded-pill shadow-sm">3 Unread</span>
+        </div>
+        <div class="d-flex gap-2">
+            <div class="input-group input-group-sm bg-light rounded-pill overflow-hidden border">
+                <span class="input-group-text bg-transparent border-0 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control border-0 bg-transparent shadow-none" placeholder="Search emails...">
+            </div>
+            <button class="btn btn-sm btn-primary rounded-pill px-3 fw-semibold shadow-sm"><i class="bi bi-pencil-square me-1"></i> Compose</button>
+        </div>
+    </div>
+    
+    <!-- Inbox Split View -->
+    <div class="d-flex flex-grow-1 overflow-hidden">
+        
+        <!-- Sidebar / List -->
+        <div class="border-end d-flex flex-column" style="width: 350px; background-color: #f8fafc;">
+            
+            <!-- Filters -->
+            <div class="p-3 border-bottom bg-white d-flex justify-content-between align-items-center flex-shrink-0">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-white border shadow-sm rounded-pill fw-semibold dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        All Mail
+                    </button>
+                    <ul class="dropdown-menu shadow-sm border-0 rounded-3 mt-1">
+                        <li><a class="dropdown-item fw-semibold text-primary" href="#">All Mail</a></li>
+                        <li><a class="dropdown-item fw-semibold" href="#">Unread</a></li>
+                        <li><a class="dropdown-item fw-semibold" href="#">Important</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-sm btn-light rounded-circle"><i class="bi bi-arrow-clockwise"></i></button>
+            </div>
+            
+            <!-- Message List -->
+            <div class="overflow-auto flex-grow-1">
+                
+                <!-- Msg 1 (Unread, Active) -->
+                <div class="p-3 border-bottom bg-white border-start border-4 border-primary position-relative cursor-pointer hover-bg transition-all">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <h6 class="fw-bold text-dark mb-0 fs-14 text-truncate">TPO Cell - Urgent</h6>
+                        <span class="small text-primary fw-bold">10:42 AM</span>
+                    </div>
+                    <h6 class="fw-bold mb-1 fs-13 text-truncate">Google Pre-Placement Talk Link</h6>
+                    <p class="small text-muted mb-0 line-clamp-2">Dear Students, The link for today's Google PPT has been updated. Please find the new meet link below and join 10 mins early.</p>
+                </div>
+                
+                <!-- Msg 2 (Unread) -->
+                <div class="p-3 border-bottom bg-white position-relative cursor-pointer hover-bg transition-all">
+                    <div class="position-absolute top-50 start-0 translate-middle-y ms-1">
+                        <div class="bg-primary rounded-circle" style="width: 6px; height: 6px;"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start mb-1 ps-2">
+                        <h6 class="fw-bold text-dark mb-0 fs-14 text-truncate">Amazon HR Team</h6>
+                        <span class="small text-muted fw-bold">Yesterday</span>
+                    </div>
+                    <h6 class="fw-bold mb-1 fs-13 text-truncate ps-2">Interview Scheduled: SWE Round 1</h6>
+                    <p class="small text-muted mb-0 line-clamp-2 ps-2">Hi Rohan, We are pleased to inform you that your technical interview is scheduled for tomorrow at 2 PM.</p>
+                </div>
+
+                <!-- Msg 3 (Read) -->
+                <div class="p-3 border-bottom bg-light position-relative cursor-pointer hover-bg transition-all">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <h6 class="fw-semibold text-muted mb-0 fs-14 text-truncate">Placement Dept (SCET)</h6>
+                        <span class="small text-muted">Oct 20</span>
+                    </div>
+                    <h6 class="fw-semibold text-dark mb-1 fs-13 text-truncate">Resume Verification Completed</h6>
+                    <p class="small text-muted mb-0 line-clamp-2">Your updated resume has been successfully verified by the placement committee and forwarded to TCS.</p>
+                </div>
+                
+                <!-- Msg 4 (Read, Important) -->
+                <div class="p-3 border-bottom bg-light position-relative cursor-pointer hover-bg transition-all">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <div class="d-flex align-items-center gap-1">
+                            <i class="bi bi-star-fill text-warning fs-12"></i>
+                            <h6 class="fw-semibold text-muted mb-0 fs-14 text-truncate">Infosys Careers</h6>
+                        </div>
+                        <span class="small text-muted">Oct 18</span>
+                    </div>
+                    <h6 class="fw-semibold text-dark mb-1 fs-13 text-truncate">Congratulations on your selection!</h6>
+                    <p class="small text-muted mb-0 line-clamp-2">We are thrilled to extend an offer for the Systems Engineer role. Please find the attached offer letter.</p>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Reading Pane -->
+        <div class="flex-grow-1 bg-white d-flex flex-column h-100">
+            
+            <!-- Toolbar -->
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center flex-shrink-0 bg-white">
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle shadow-sm" title="Archive"><i class="bi bi-archive"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle shadow-sm" title="Mark as Read/Unread"><i class="bi bi-envelope-open"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle shadow-sm" title="Delete"><i class="bi bi-trash text-danger"></i></button>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle shadow-sm"><i class="bi bi-star"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle shadow-sm"><i class="bi bi-three-dots-vertical"></i></button>
+                </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-4 p-md-5 overflow-auto flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-4 pb-4 border-bottom">
+                    <div>
+                        <h3 class="fw-bold text-dark mb-3">Google Pre-Placement Talk Link - URGENT</h3>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm" style="width: 45px; height: 45px;">
+                                TPO
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Training & Placement Cell <span class="fw-normal text-muted small">&lt;tpo@scet.ac.in&gt;</span></h6>
+                                <span class="small text-muted">To: All CS/IT Students (2027 Batch)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <span class="small text-muted fw-semibold d-block mb-1">Today, 10:42 AM</span>
+                        <span class="badge bg-danger-subtle text-danger rounded-pill shadow-sm"><i class="bi bi-exclamation-circle-fill me-1"></i> High Priority</span>
+                    </div>
+                </div>
+                
+                <div class="email-body fs-15 lh-lg text-dark">
+                    <p>Dear Students,</p>
+                    <p>This is to inform you that the meeting link for today's Google Pre-Placement Talk has been updated due to capacity issues with the previous link.</p>
+                    
+                    <div class="p-4 bg-light rounded-4 border my-4">
+                        <h6 class="fw-bold mb-2">Event Details:</h6>
+                        <ul class="mb-0 text-muted">
+                            <li><strong>Date:</strong> Today, Oct 24</li>
+                            <li><strong>Time:</strong> 10:00 AM (Join by 9:50 AM)</li>
+                            <li><strong>Speaker:</strong> Amit Rao (University Recruiting Lead, Google India)</li>
+                            <li><strong>New Link:</strong> <a href="#" class="text-primary fw-bold">https://meet.google.com/xyz-abcd-efg</a></li>
+                        </ul>
+                    </div>
+                    
+                    <p>Attendance is mandatory for all shortlisted students. The meeting will be locked exactly at 10:00 AM, so please join early.</p>
+                    
+                    <p class="mb-0 mt-4">Best Regards,<br>
+                    <strong>Prof. Rakesh Sharma</strong><br>
+                    Head of Placements, SCET</p>
+                </div>
+                
+                <!-- Quick Reply -->
+                <div class="mt-5 border rounded-4 overflow-hidden shadow-sm">
+                    <div class="bg-light p-3 border-bottom fw-semibold text-muted fs-14">
+                        <i class="bi bi-reply-fill me-2"></i> Reply to TPO Cell
+                    </div>
+                    <div class="p-2 bg-white">
+                        <textarea class="form-control border-0 shadow-none" rows="3" placeholder="Write your reply here..."></textarea>
+                    </div>
+                    <div class="p-3 bg-white border-top d-flex justify-content-between align-items-center">
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-light rounded-circle"><i class="bi bi-paperclip"></i></button>
+                            <button class="btn btn-sm btn-light rounded-circle"><i class="bi bi-image"></i></button>
+                        </div>
+                        <button class="btn btn-primary px-4 rounded-pill fw-semibold shadow-sm">Send <i class="bi bi-send ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <style>
+        .hover-bg:hover { background-color: #f1f5f9 !important; }
+        .cursor-pointer { cursor: pointer; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .fs-13 { font-size: 13px; }
+        .fs-14 { font-size: 14px; }
+        .fs-15 { font-size: 15px; }
+        
+        /* Hide body scrollbar when inbox is full height */
+        body { overflow: hidden; }
+    </style>
+        </main>

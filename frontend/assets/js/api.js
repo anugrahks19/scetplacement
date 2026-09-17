@@ -2,18 +2,21 @@ const GRAPHQL_URL = 'http://localhost:4000/';
 
 /**
  * Reusable utility to make requests to our GraphQL backend.
- * Hardcodes auth headers for the prototype.
  */
 async function graphqlRequest(query, variables = {}) {
     try {
+        const token = localStorage.getItem('authToken');
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+        }
+
         const response = await fetch(GRAPHQL_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                // Hardcoded auth for the prototype backend
-                'Authorization': 'user_123',
-                'X-Organization-Id': 'org_123'
-            },
+            headers,
             body: JSON.stringify({
                 query,
                 variables

@@ -1,0 +1,132 @@
+        <main class="app-body border">
+            <div class="page-header py-2 py-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    <div class="row align-items-center mb-3 mb-lg-0">
+                        <div class="col-12 col-md-auto mb-3 mb-md-0">
+                            <div class="page-title d-flex align-items-center gap-2 mb-2">
+                                <h4 class="mb-0">My Applications</h4>
+                            </div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">My Applications</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content pt-0 pb-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="card-header bg-white border-bottom p-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                            <h5 class="fw-bold mb-0">Track Applications</h5>
+                            <div class="d-flex gap-2">
+                                <select class="form-select bg-light border-0 rounded-pill">
+                                    <option>All Statuses</option>
+                                    <option>In Review</option>
+                                    <option>Interviewing</option>
+                                    <option>Offered</option>
+                                    <option>Rejected</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3 text-secondary fw-semibold small">Company</th>
+                                        <th scope="col" class="py-3 text-secondary fw-semibold small">Role</th>
+                                        <th scope="col" class="py-3 text-secondary fw-semibold small">Date Applied</th>
+                                        <th scope="col" class="py-3 text-secondary fw-semibold small">Status</th>
+                                        <th scope="col" class="text-end px-4 py-3 text-secondary fw-semibold small">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <!-- Row 1 -->
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-primary-subtle text-primary fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">N</div>
+                                                <span class="fw-bold text-dark">Nexus Innovations</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 text-dark fw-medium">Frontend React Developer</td>
+                                        <td class="py-3 text-secondary small">Sep 15, 2026</td>
+                                        <td class="py-3">
+                                            <span class="badge bg-success-subtle text-success border border-success rounded-pill px-3">Interviewing</span>
+                                        </td>
+                                        <td class="text-end px-4 py-3">
+                                            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Row 2 -->
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-warning-subtle text-warning fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">F</div>
+                                                <span class="fw-bold text-dark">FinTech Solutions</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 text-dark fw-medium">Junior Data Analyst</td>
+                                        <td class="py-3 text-secondary small">Sep 12, 2026</td>
+                                        <td class="py-3">
+                                            <span class="badge bg-warning-subtle text-warning border border-warning rounded-pill px-3">In Review</span>
+                                        </td>
+                                        <td class="text-end px-4 py-3">
+                                            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Row 3 -->
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-danger-subtle text-danger fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">C</div>
+                                                <span class="fw-bold text-dark">CyberDefend Corp</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 text-dark fw-medium">Security Analyst Intern</td>
+                                        <td class="py-3 text-secondary small">Sep 05, 2026</td>
+                                        <td class="py-3">
+                                            <span class="badge bg-secondary-subtle text-secondary border border-secondary rounded-pill px-3">Rejected</span>
+                                        </td>
+                                        <td class="text-end px-4 py-3">
+                                            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Details</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Row 4 -->
+                                    <tr>
+                                        <td class="px-4 py-3">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-info-subtle text-info fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">A</div>
+                                                <span class="fw-bold text-dark">Apex Systems</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 text-dark fw-medium">Backend Engineer</td>
+                                        <td class="py-3 text-secondary small">Aug 28, 2026</td>
+                                        <td class="py-3">
+                                            <span class="badge bg-primary-subtle text-primary border border-primary rounded-pill px-3">Offered</span>
+                                        </td>
+                                        <td class="text-end px-4 py-3">
+                                            <button class="btn btn-sm btn-primary rounded-pill px-3 fw-bold">Accept Offer</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <style>
+                .table-hover tbody tr:hover { background-color: rgba(0,0,0,0.02); }
+            </style>
+        </main>

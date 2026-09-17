@@ -1,0 +1,204 @@
+        <main class="app-body border bg-light">
+
+    <!-- Header Hero -->
+    <div class="page-header py-4 p-lg-5 text-white rounded-bottom-4 shadow-sm" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="align-items-lg-start d-flex flex-column justify-content-center">
+                    <h1 class="fs-2 section-title mb-1 fw-bold">My Applications</h1>
+                    <p class="mb-0 opacity-75 fs-6">Track your job applications and interview statuses.</p>
+                </div>
+                <div class="d-flex gap-2 mt-3 mt-lg-0">
+                    <button class="btn btn-light rounded-pill px-4 fw-semibold text-info shadow-sm"><i class="bi bi-funnel-fill me-2"></i> Filter Status</button>
+                    <a href="app-jobfeeds.html" class="btn btn-outline-light rounded-pill px-4 fw-semibold"><i class="bi bi-briefcase-fill me-2"></i> Find More Jobs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-4 p-lg-5 mt-n4">
+        <div class="container-fluid">
+            
+            <!-- Quick Filters -->
+            <div class="d-flex gap-2 overflow-auto pb-3 mb-3" style="white-space: nowrap;">
+                <button class="btn btn-primary rounded-pill px-4 shadow-sm">All (4)</button>
+                <button class="btn btn-white border text-dark rounded-pill px-4 bg-white shadow-sm hover-lift">Shortlisted (1)</button>
+                <button class="btn btn-white border text-dark rounded-pill px-4 bg-white shadow-sm hover-lift">Interviewing (2)</button>
+                <button class="btn btn-white border text-dark rounded-pill px-4 bg-white shadow-sm hover-lift">Selected (0)</button>
+                <button class="btn btn-white border text-dark rounded-pill px-4 bg-white shadow-sm hover-lift">Rejected (1)</button>
+            </div>
+            
+            <div class="row g-4 mb-4">
+                
+                <!-- App 1: Interviewing -->
+                <div class="col-xl-6">
+                    <div class="card border-0 shadow-sm rounded-4 hover-lift transition-all overflow-hidden h-100">
+                        <div class="card-body p-0 d-flex flex-column h-100">
+                            <!-- Top Section -->
+                            <div class="p-4 d-flex justify-content-between align-items-start border-bottom border-light bg-info-subtle">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-white rounded-3 shadow-sm p-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-google fs-3 text-danger"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark">Software Engineer (L3)</h5>
+                                        <p class="text-muted small mb-0 fw-semibold">Google • Applied 12 days ago</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-primary text-white rounded-pill px-3 py-2 shadow-sm"><i class="bi bi-chat-dots-fill me-1"></i> Interviewing</span>
+                            </div>
+                            <!-- Mid Section -->
+                            <div class="p-4 flex-grow-1">
+                                <p class="small text-muted mb-4 line-clamp-2">You have successfully cleared the online assessment. Your first technical interview is scheduled for next week. Please prepare algorithms and data structures.</p>
+                                
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box bg-light text-primary rounded-circle me-3 flex-shrink-0" style="width: 35px; height: 35px; display:flex; align-items:center; justify-content:center;">
+                                            <i class="bi bi-calendar-event"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold fs-13">Technical Round 1</h6>
+                                            <span class="text-muted small">Oct 28, 2026 at 10:00 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box bg-light text-primary rounded-circle me-3 flex-shrink-0" style="width: 35px; height: 35px; display:flex; align-items:center; justify-content:center;">
+                                            <i class="bi bi-person-video3"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold fs-13">Interviewer</h6>
+                                            <span class="text-muted small">Sarah Jenkins (Senior SWE)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Section -->
+                            <div class="p-4 bg-light d-flex gap-2">
+                                <button class="btn btn-primary rounded-pill w-100 fw-semibold"><i class="bi bi-camera-video me-1"></i> Join Meeting</button>
+                                <button class="btn btn-outline-dark rounded-pill w-100 fw-semibold">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 2: Shortlisted -->
+                <div class="col-xl-6">
+                    <div class="card border-0 shadow-sm rounded-4 hover-lift transition-all overflow-hidden h-100">
+                        <div class="card-body p-0 d-flex flex-column h-100">
+                            <!-- Top Section -->
+                            <div class="p-4 d-flex justify-content-between align-items-start border-bottom border-light bg-warning-subtle">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-white rounded-3 shadow-sm p-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-microsoft fs-3 text-info"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark">SDE Intern</h5>
+                                        <p class="text-muted small mb-0 fw-semibold">Microsoft • Applied 2 weeks ago</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 shadow-sm"><i class="bi bi-stars me-1"></i> Shortlisted</span>
+                            </div>
+                            <!-- Mid Section -->
+                            <div class="p-4 flex-grow-1">
+                                <p class="small text-muted mb-4 line-clamp-2">Congratulations! Your resume has been shortlisted for the SDE intern role. We will reach out to you shortly with the assessment link.</p>
+                                
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-center opacity-50">
+                                        <div class="icon-box bg-light text-muted rounded-circle me-3 flex-shrink-0" style="width: 35px; height: 35px; display:flex; align-items:center; justify-content:center;">
+                                            <i class="bi bi-code-slash"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold fs-13">Online Assessment</h6>
+                                            <span class="text-muted small">Pending Schedule</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Section -->
+                            <div class="p-4 bg-light d-flex gap-2 mt-auto">
+                                <button class="btn btn-outline-dark rounded-pill w-100 fw-semibold" disabled>Awaiting Action</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 3: Interviewing -->
+                <div class="col-xl-6">
+                    <div class="card border-0 shadow-sm rounded-4 hover-lift transition-all overflow-hidden h-100">
+                        <div class="card-body p-0 d-flex flex-column h-100">
+                            <!-- Top Section -->
+                            <div class="p-4 d-flex justify-content-between align-items-start border-bottom border-light">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-light rounded-3 shadow-sm p-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <h3 class="mb-0 text-primary fw-bold">TCS</h3>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark">Digital Cadre</h5>
+                                        <p class="text-muted small mb-0 fw-semibold">Tata Consultancy Services • Applied 1 month ago</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-primary text-white rounded-pill px-3 py-2 shadow-sm"><i class="bi bi-chat-dots-fill me-1"></i> HR Round</span>
+                            </div>
+                            <!-- Mid Section -->
+                            <div class="p-4 flex-grow-1">
+                                <p class="small text-muted mb-4 line-clamp-2">You cleared the Technical Managerial round. The final HR interview is scheduled.</p>
+                                
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box bg-light text-primary rounded-circle me-3 flex-shrink-0" style="width: 35px; height: 35px; display:flex; align-items:center; justify-content:center;">
+                                            <i class="bi bi-building"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold fs-13">On-Campus HR Round</h6>
+                                            <span class="text-muted small">Nov 2, 2026 at Seminar Hall B</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Section -->
+                            <div class="p-4 bg-light d-flex gap-2">
+                                <button class="btn btn-primary rounded-pill w-100 fw-semibold">Prepare for HR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 4: Rejected -->
+                <div class="col-xl-6">
+                    <div class="card border-0 shadow-sm rounded-4 hover-lift transition-all overflow-hidden h-100 opacity-75">
+                        <div class="card-body p-0 d-flex flex-column h-100">
+                            <!-- Top Section -->
+                            <div class="p-4 d-flex justify-content-between align-items-start border-bottom border-light bg-danger-subtle">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-white rounded-3 shadow-sm p-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <h3 class="mb-0 text-danger fw-bold">W</h3>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-0 text-dark">Project Engineer</h5>
+                                        <p class="text-muted small mb-0 fw-semibold">Wipro • Applied 2 months ago</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-danger text-white rounded-pill px-3 py-2 shadow-sm"><i class="bi bi-x-circle-fill me-1"></i> Rejected</span>
+                            </div>
+                            <!-- Mid Section -->
+                            <div class="p-4 flex-grow-1">
+                                <p class="small text-muted mb-4 line-clamp-2">Thank you for your interest in Wipro. Unfortunately, we will not be moving forward with your application at this time.</p>
+                            </div>
+                            <!-- Bottom Section -->
+                            <div class="p-4 bg-light d-flex gap-2 mt-auto">
+                                <button class="btn btn-outline-secondary rounded-pill w-100 fw-semibold">Archive</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+        </main>

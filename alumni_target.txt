@@ -1,0 +1,125 @@
+        <main class="app-body border bg-light">
+
+    <!-- Header Hero -->
+    <div class="page-header py-4 p-lg-5 text-white rounded-bottom-4 shadow-sm" style="background: linear-gradient(135deg, #4f46e5, #4338ca);">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="align-items-lg-start d-flex flex-column justify-content-center">
+                    <h1 class="fs-2 section-title mb-1 fw-bold">Alumni Connect</h1>
+                    <p class="mb-0 opacity-75 fs-6">Network with SCET alumni at top companies for guidance and referrals.</p>
+                </div>
+                <div class="d-flex gap-2 mt-3 mt-lg-0">
+                    <div class="input-group bg-white rounded-pill overflow-hidden shadow-sm border-0">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-4"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-0 shadow-none ps-2" placeholder="Search by company or role...">
+                        <button class="btn btn-primary px-4 fw-semibold rounded-pill">Find</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-4 p-lg-5 mt-n4">
+        <div class="container-fluid">
+            
+            <!-- Filters -->
+            <div class="d-flex gap-2 overflow-auto pb-3 mb-4 border-bottom border-light" style="white-space: nowrap;">
+                <button class="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm">All Alumni</button>
+                <button class="btn btn-white border border-light text-dark rounded-pill px-4 bg-white shadow-sm hover-lift fw-semibold"><i class="bi bi-google me-1 text-danger"></i> Product Based</button>
+                <button class="btn btn-white border border-light text-dark rounded-pill px-4 bg-white shadow-sm hover-lift fw-semibold"><i class="bi bi-building me-1 text-info"></i> Service Based</button>
+                <button class="btn btn-white border border-light text-dark rounded-pill px-4 bg-white shadow-sm hover-lift fw-semibold"><i class="bi bi-graph-up-arrow me-1 text-success"></i> Startups</button>
+                <button class="btn btn-white border border-light text-dark rounded-pill px-4 bg-white shadow-sm hover-lift fw-semibold ms-auto"><i class="bi bi-funnel-fill me-1"></i> More Filters</button>
+            </div>
+            
+            <div class="row g-4 mb-4">
+                
+                <!-- Alumni 1 -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift text-center">
+                        <div class="card-body p-4 d-flex flex-column align-items-center">
+                            <div class="position-relative mb-3">
+                                <img src="../assets/images/avatar/01.jpg" alt="Alumni" class="rounded-circle border border-4 border-white shadow-sm" style="width: 100px; height: 100px; object-fit: cover;">
+                                <span class="position-absolute bottom-0 end-0 p-2 bg-success border border-white rounded-circle"></span>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-0">Rohan Sharma</h5>
+                            <p class="small text-muted mb-2">Class of 2024 (CSE)</p>
+                            <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-semibold mb-3">Software Engineer @ Microsoft</span>
+                            
+                            <p class="small text-muted mb-4 line-clamp-2 px-2">Happy to help SCET juniors with resume reviews and DSA prep for product companies.</p>
+                            
+                            <div class="d-flex gap-2 w-100 mt-auto">
+                                <button class="btn btn-outline-primary rounded-pill flex-grow-1 fw-semibold"><i class="bi bi-chat-dots-fill me-1"></i> Message</button>
+                                <button class="btn btn-light rounded-circle text-primary border shadow-sm" style="width: 40px; height: 40px;"><i class="bi bi-linkedin"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni 2 -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift text-center">
+                        <div class="card-body p-4 d-flex flex-column align-items-center">
+                            <div class="position-relative mb-3">
+                                <img src="../assets/images/avatar/02.jpg" alt="Alumni" class="rounded-circle border border-4 border-white shadow-sm" style="width: 100px; height: 100px; object-fit: cover;">
+                            </div>
+                            <h5 class="fw-bold text-dark mb-0">Priya Patel</h5>
+                            <p class="small text-muted mb-2">Class of 2022 (IT)</p>
+                            <span class="badge bg-danger-subtle text-danger rounded-pill px-3 py-2 fw-semibold mb-3">Data Scientist @ Amazon</span>
+                            
+                            <p class="small text-muted mb-4 line-clamp-2 px-2">Reach out if you are interested in ML/AI roles. Can refer if your profile matches.</p>
+                            
+                            <div class="d-flex gap-2 w-100 mt-auto">
+                                <button class="btn btn-outline-primary rounded-pill flex-grow-1 fw-semibold"><i class="bi bi-chat-dots-fill me-1"></i> Message</button>
+                                <button class="btn btn-light rounded-circle text-primary border shadow-sm" style="width: 40px; height: 40px;"><i class="bi bi-linkedin"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni 3 -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift text-center">
+                        <div class="card-body p-4 d-flex flex-column align-items-center">
+                            <div class="position-relative mb-3">
+                                <div class="rounded-circle border border-4 border-white shadow-sm bg-info text-white d-flex align-items-center justify-content-center fw-bold fs-1" style="width: 100px; height: 100px;">VK</div>
+                                <span class="position-absolute bottom-0 end-0 p-2 bg-success border border-white rounded-circle"></span>
+                            </div>
+                            <h5 class="fw-bold text-dark mb-0">Vikram Kumar</h5>
+                            <p class="small text-muted mb-2">Class of 2025 (CSE)</p>
+                            <span class="badge bg-info-subtle text-info-emphasis rounded-pill px-3 py-2 fw-semibold mb-3">Systems Analyst @ TCS</span>
+                            
+                            <p class="small text-muted mb-4 line-clamp-2 px-2">Available to guide on clearing TCS NQT and Ninja/Digital interviews.</p>
+                            
+                            <div class="d-flex gap-2 w-100 mt-auto">
+                                <button class="btn btn-outline-primary rounded-pill flex-grow-1 fw-semibold"><i class="bi bi-chat-dots-fill me-1"></i> Message</button>
+                                <button class="btn btn-light rounded-circle text-primary border shadow-sm" style="width: 40px; height: 40px;"><i class="bi bi-linkedin"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni 4 -->
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift text-center bg-primary text-white">
+                        <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center position-relative overflow-hidden z-1">
+                            <i class="bi bi-stars position-absolute top-0 end-0 mt-3 me-3 opacity-25 fs-1"></i>
+                            <div class="icon-box bg-white text-primary rounded-circle p-4 shadow mb-3">
+                                <i class="bi bi-person-plus-fill fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Want to give back?</h5>
+                            <p class="small opacity-75 mb-4">Are you a placed senior willing to mentor juniors? Join the mentor board.</p>
+                            <button class="btn btn-light rounded-pill w-100 fw-bold text-primary shadow-sm mt-auto">Register as Mentor</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+        </main>

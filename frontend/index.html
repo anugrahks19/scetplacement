@@ -282,10 +282,14 @@
             const role = document.getElementById('userRole').value;
 
             if ((email === 'anugrahks2006@gmail.com' && password === '12345') || (role === 'faculty' && email === 'faculty@scet.ac.in' && password === 'faculty123')) {
-                if (role === 'student') window.location.href = 'dashboard-student.html';
-                else if (role === 'faculty') window.location.href = 'faculty-dashboard.html';
-                else if (role === 'coordinator') window.location.href = 'dashboard-coordinator.html';
-                else if (role === 'admin') window.location.href = 'dashboard-admin.html';
+                // Set mock JWT token for GraphQL authentication
+                const mockJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im1vY2stdGVhY2hlci11dWlkIiwicm9sZSI6IlRFQUNIRVIiLCJvcmdhbml6YXRpb25JZCI6Im1vY2stb3JnLXV1aWQiLCJpYXQiOjE3ODk2MTYzNjR9.Z_DxYAtSechM16utGvArpow0l8HhiBu6KEU6fdXbSK8';
+                localStorage.setItem('authToken', mockJwt);
+
+                if (role === 'student') window.location.href = 'student/dashboard-student.html';
+                else if (role === 'faculty') window.location.href = 'faculty/faculty-dashboard.html';
+                else if (role === 'coordinator') window.location.href = 'placement_coordinator/dashboard-coordinator.html';
+                else if (role === 'admin') window.location.href = 'administrator/dashboard-admin.html';
             } else {
                 alert('Invalid email or password. Access denied.');
             }

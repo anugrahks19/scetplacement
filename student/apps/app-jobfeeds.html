@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" data-theme="theme-indigo" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Job Feeds - SCET Placement Cell</title>
+    <link href="../../assets/images/favicon.ico" rel="icon" type="image/png"/>
+    <link href="../../assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../assets/vendor/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="../../assets/css/styles.css" rel="stylesheet"/>
+    <link href="../../assets/css/layout-main.css" rel="stylesheet"/>
+</head>
+<body class="layout-main">
+<div class="app-wrapper">
+    <header class="sticky-top px-lg-3">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between py-2">
+                <div class="d-flex gap-2 align-items-center flex-fill">
+                    <a aria-label="DSA &amp; CP" class="brand text-decoration-none d-flex gap-2 align-items-center d-lg-none me-auto" href="../dashboard-student.html">
+                        <span class="fs-4 fw-bold d-none d-sm-inline-block d-lg-none">DashQ</span>
+                    </a>
+                    <button aria-label="Light/Dark toggle theme" class="btn icon-button border-0" id="themeToggle"><i class="bi bi-sun"></i></button>
+                    <div class="ms-3 d-none d-md-flex gap-2">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2">Computer Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container-fluid p-xl-4 p-sm-3 p-0 mb-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-2 mb-4">
+                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Job Feeds</li>
+                </ol>
+            </nav>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="../dashboard-student.html" class="btn btn-sm btn-light border rounded-circle" aria-label="Back"><i class="bi bi-arrow-left"></i></a>
+                    <h4 class="mb-0 fw-bold">Active Job Postings</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 rounded-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="fw-bold mb-1">Software Development Engineer (SDE-1)</h5>
+                                    <p class="text-muted mb-3"><i class="bi bi-building me-2"></i>Tech Mahindra</p>
+                                </div>
+                                <span class="badge bg-success-subtle text-success h-100 px-3 py-2">Full Time</span>
+                            </div>
+                            <p class="small text-muted mb-4">Looking for enthusiastic freshers with strong foundations in Data Structures and Algorithms. Java or Python required.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">₹6.5 LPA</span>
+                                <button class="btn btn-primary rounded-pill px-4" onclick="alert('Application Submitted!')">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100 rounded-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="fw-bold mb-1">Frontend Intern</h5>
+                                    <p class="text-muted mb-3"><i class="bi bi-building me-2"></i>TCS Digital</p>
+                                </div>
+                                <span class="badge bg-info-subtle text-info h-100 px-3 py-2">Internship</span>
+                            </div>
+                            <p class="small text-muted mb-4">6-month internship focused on React and modern frontend architectures. Pre-placement offer available for top performers.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">₹25,000 / month</span>
+                                <button class="btn btn-primary rounded-pill px-4" onclick="alert('Application Submitted!')">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="../../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/student_backend_integration.js"></script>
+</body>
+</html>

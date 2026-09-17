@@ -34,7 +34,7 @@ export const assessmentResolvers = {
     },
     removeQuestionFromSection: async (_: any, { itemId }: { itemId: string }, context: any) => {
       if (context.user.role !== 'TEACHER') throw new Error('Unauthorized');
-      return assessmentService.removeQuestionFromSection(itemId);
+      return assessmentService.removeQuestionFromSection(itemId, context.user.organizationId);
     },
     assignBatchToAssessment: async (_: any, { assessmentId, batchId }: any, context: any) => {
       if (context.user.role !== 'TEACHER') throw new Error('Unauthorized');

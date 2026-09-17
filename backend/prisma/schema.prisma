@@ -146,3 +146,56 @@ enum ReviewAction {
   REJECTED
   REVISION_REQUESTED
 }
+
+model Student {
+  id                 String               @id @default(cuid())
+  organizationId     String
+  name               String
+  email              String
+  rollNo             String
+  batchId            String?
+  cgpa               Float                @default(0.0)
+  placementReadiness Float                @default(0.0)
+  eligibilityStatus  String               @default("Eligible")
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  attempts           AssessmentAttempt[]
+}
+
+model AssessmentAttempt {
+  id             String                 @id @default(cuid())
+  assessmentId   String
+  studentId      String
+  status         AttemptStatus          @default(STARTED)
+  mcqScore       Int                    @default(0)
+  codingScore    Int                    @default(0)
+  totalScore     Int                    @default(0)
+  startedAt      DateTime               @default(now())
+  completedAt    DateTime?
+  student        Student                @relation(fields: [studentId], references: [id])
+  submissions    AssessmentSubmission[]
+  integrityLogs  IntegrityLog[]
+}
+
+model AssessmentSubmission {
+  id           String            @id @default(cuid())
+  attemptId    String
+  itemId       String
+  marksAwarded Int               @default(0)
+  attempt      AssessmentAttempt @relation(fields: [attemptId], references: [id])
+
+  @@unique([attemptId, itemId])
+}
+
+model IntegrityLog {
+  id        String            @id @default(cuid())
+  attemptId String
+  flagCount Int               @default(0)
+  attempt   AssessmentAttempt @relation(fields: [attemptId], references: [id])
+}
+
+enum AttemptStatus {
+  STARTED
+  COMPLETED
+  ABANDONED
+}

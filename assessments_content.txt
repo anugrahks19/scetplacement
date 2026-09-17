@@ -1,0 +1,145 @@
+        <main class="app-body border">
+            <!-- page header, Breadcrumb and page action btn -->
+            <div class="page-header py-2 py-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    <div class="row align-items-center mb-3 mb-lg-0">
+                        <div class="col-12 col-md-auto mb-3 mb-md-0">
+                            <!-- page title -->
+                            <div class="page-title d-flex align-items-center gap-2 mb-2">
+                                <h4 class="mb-0">Assessments</h4>
+                            </div>
+                            <!-- breadcrumb -->
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Assessments</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page content -->
+            <div class="page-content pt-0 pb-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h5 class="fw-bold mb-3">Pending Assessments</h5>
+                            <p class="text-secondary">Complete these assessments to unlock more interview opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                        
+                        <!-- Assessment Card 1 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative hover-lift">
+                                <div class="bg-primary position-absolute top-0 start-0 w-100" style="height: 4px;"></div>
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center text-primary">
+                                            <i class="bi bi-code-square fs-3"></i>
+                                        </div>
+                                        <span class="badge bg-danger rounded-pill px-3 py-2">Required</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Data Structures Core</h5>
+                                    <p class="text-secondary small mb-4">Master arrays, linked lists, trees, and dynamic programming fundamentals.</p>
+                                    
+                                    <div class="d-flex gap-3 mb-4 small fw-semibold text-secondary">
+                                        <div><i class="bi bi-clock me-1"></i> 45 Mins</div>
+                                        <div><i class="bi bi-bar-chart-line me-1"></i> Intermediate</div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='interview-prep.html'">Start Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assessment Card 2 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative hover-lift">
+                                <div class="bg-info position-absolute top-0 start-0 w-100" style="height: 4px;"></div>
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center text-info">
+                                            <i class="bi bi-layout-wtf fs-3"></i>
+                                        </div>
+                                        <span class="badge bg-danger rounded-pill px-3 py-2">Required</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Frontend Architecture</h5>
+                                    <p class="text-secondary small mb-4">React, State Management, and scalable UI component design patterns.</p>
+                                    
+                                    <div class="d-flex gap-3 mb-4 small fw-semibold text-secondary">
+                                        <div><i class="bi bi-clock me-1"></i> 60 Mins</div>
+                                        <div><i class="bi bi-bar-chart-line me-1"></i> Advanced</div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='interview-prep.html'">Start Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assessment Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative hover-lift">
+                                <div class="bg-success position-absolute top-0 start-0 w-100" style="height: 4px;"></div>
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center text-success">
+                                            <i class="bi bi-diagram-3 fs-3"></i>
+                                        </div>
+                                        <span class="badge bg-secondary rounded-pill px-3 py-2">Optional</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">System Design 101</h5>
+                                    <p class="text-secondary small mb-4">Scalability, caching, databases, and microservice architecture.</p>
+                                    
+                                    <div class="d-flex gap-3 mb-4 small fw-semibold text-secondary">
+                                        <div><i class="bi bi-clock me-1"></i> 90 Mins</div>
+                                        <div><i class="bi bi-bar-chart-line me-1"></i> Advanced</div>
+                                    </div>
+                                    
+                                    <button class="btn btn-outline-primary w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='interview-prep.html'">Start Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Assessment Card 4 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative hover-lift">
+                                <div class="bg-warning position-absolute top-0 start-0 w-100" style="height: 4px;"></div>
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center text-warning">
+                                            <i class="bi bi-lightbulb fs-3"></i>
+                                        </div>
+                                        <span class="badge bg-secondary rounded-pill px-3 py-2">Optional</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">General Aptitude</h5>
+                                    <p class="text-secondary small mb-4">Quantitative reasoning, logical deduction, and verbal ability.</p>
+                                    
+                                    <div class="d-flex gap-3 mb-4 small fw-semibold text-secondary">
+                                        <div><i class="bi bi-clock me-1"></i> 30 Mins</div>
+                                        <div><i class="bi bi-bar-chart-line me-1"></i> Beginner</div>
+                                    </div>
+                                    
+                                    <button class="btn btn-outline-primary w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='interview-prep.html'">Start Assessment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .hover-lift {
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                .hover-lift:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+                }
+            </style>
+        </main>

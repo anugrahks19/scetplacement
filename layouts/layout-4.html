@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-theme="theme-indigo">
+
+<!-- Mirrored from https://edggeui.com/dashq/html/layouts/layout-4.html by HTTrack Website Copier/3.x [XR&CO], Tue, 15 Sep 2026 16:25:56 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EdggeUI">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="Bootstrap Admin Template, CRM Dashboard, Admin Panel, Bootstrap 5 Dashboard, Project Management, Analytics Template, Responsive Admin">
+    <meta name="description" content="SCET Placement Cell portal.">
+    <!-- end::DashQ Meta Basic -->
+
+    <!-- begin::DashQ Website Page Title -->
+    <title>SCET Placement Cell</title>
+    <link rel="canonical" href="layout-4.html">
+
+    <!-- begin::DashQ Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- begin::DashQ Favicon Tags -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-icon-180x180.png">
+
+    <!-- begin::Bootstrap v5.3.8 and icon -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap-icons.css">
+    <!-- begin::Vendor css -->
+
+    <!-- begin::DashQ CSS Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/layouts/layout-4.css">
+</head>
+
+<body class="layout-4">
+
+    <div class="app-wrapper">
+        <!-- begin::Header -->
+        <header class="sticky-top px-0 px-lg-2 py-lg-2 bg-primary">
+            <div class="container-fluid h-100">
+                <div class="d-flex flex-lg-column flex-row align-items-center justify-content-between py-2 h-100">
+                    <!-- Start:: Left Header -->
+                    <div class="d-flex flex-lg-column flex-row gap-2 align-items-center flex-fill">
+                        <button class="navbar-toggler d-lg-none fs-4 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAside" aria-controls="offcanvasAside" aria-label="Toggle navigation">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <!-- Brand logo -->
+                        <a class="brand text-decoration-none d-flex gap-2 align-items-center" href="../index.html" aria-label="Dashboard" data-intro="Display your company's name or logo here for easy branding.">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="var(--bs-white)" d="M0 3C0 1.34315 1.34315 0 3 0H19C26.1797 0 32 5.8203 32 13V19C32 26.1797 26.1797 32 19 32H3C1.34315 32 0 30.6569 0 29V3Z"/>
+                                <path fill="var(--bs-primary)" d="M12.4851 18.925C12.4851 20.3456 12.7822 21.5962 13.3762 22.6767C13.9901 23.7572 14.8119 24.5975 15.8416 25.1978C16.8713 25.7981 18.0198 26.0982 19.2871 26.0982C20.5743 26.0982 21.7129 25.8181 22.703 25.2578C23.6931 24.6776 24.4653 23.8772 25.0198 22.8568C25.5743 21.8363 25.8515 20.6558 25.8515 19.3151C25.8515 17.9545 25.5743 16.724 25.0198 15.6235C24.4653 14.523 23.6733 13.6426 22.6436 12.9823C21.6337 12.322 20.4356 11.9918 19.0495 11.9918C17.7624 11.9918 16.6238 12.292 15.6337 12.8922C14.6634 13.4925 13.8911 14.3129 13.3168 15.3533C12.7624 16.3938 12.4851 17.5844 12.4851 18.925ZM8 18.925C8 17.3242 8.27723 15.8636 8.83168 14.543C9.38614 13.2024 10.1683 12.0418 11.1782 11.0614C12.1881 10.0809 13.3564 9.33061 14.6832 8.81037C16.0297 8.27012 17.4851 8 19.0495 8C20.6337 8 22.0891 8.27012 23.4158 8.81037C24.7426 9.33061 25.8911 10.0809 26.8614 11.0614C27.8515 12.0418 28.6139 13.2024 29.1485 14.543C29.703 15.8636 29.9802 17.3242 29.9802 18.925C29.9802 20.5057 29.7129 21.9764 29.1782 23.337C28.6436 24.6776 27.8812 25.8481 26.8911 26.8486C25.9208 27.849 24.7723 28.6294 23.4455 29.1896C22.1188 29.7299 20.6535 30 19.0495 30C17.4653 30 16 29.7299 14.6535 29.1896C13.3069 28.6294 12.1287 27.849 11.1188 26.8486C10.1287 25.8481 9.35644 24.6776 8.80198 23.337C8.26733 21.9764 8 20.5057 8 18.925ZM17.7426 20.4256H22.3465L32 32H29.1782L17.7426 20.4256Z"/>
+                            </svg>
+                            <span class="fs-4 fw-bold d-none">DashQ</span>
+                        </a>
+                        <ul class="list-unstyled d-flex flex-row flex-lg-column align-items-center gap-2 gap-lg-3 mt-0 mt-lg-3 fs-6 mb-0">
+                            <li class="d-none d-sm-inline-block"><a class="p-2 text-white" href="../index.html"><i class="bi bi-house"></i></a></li>
+                            <li class="d-none d-sm-inline-block">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle after-none p-2 text-white lh-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-menu-app d-none d-lg-inline-block"></i>
+                                        <span class="d-lg-none">App</span>
+                                    </a>
+                                    <ul class="dropdown-menu p-3 rounded-4 shadow-sm">
+                                        <li><a class="dropdown-item rounded-pill" href="#">Getting Started</a></li>
+                                        <li><a class="dropdown-item rounded-pill" href="#">Cheatsheet</a></li>
+                                        <li><a class="dropdown-item rounded-pill" href="#">Components</a></li>
+                                        <li><a class="dropdown-item rounded-pill" href="#">Widgets</a></li>
+                                        <li><a class="dropdown-item rounded-pill" href="#">Need a Help?</a></li>
+                                        <li><a class="dropdown-item rounded-pill" href="#">Plugins</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="d-none d-sm-inline-block"><a class="p-2 text-white" href="#"><i class="bi bi-archive"></i></a></li>
+                            <li class="d-none d-sm-inline-block"><a class="p-2 text-white" href="#"><i class="bi bi-folder"></i></a></li>
+                            <li class="d-none d-md-inline-block"><a class="p-2 text-white" href="#"><i class="bi bi-journal-check"></i></a></li>
+                            <li class="d-none d-md-inline-block"><a class="p-2 text-white" href="#"><i class="bi bi-calendar"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Right Header -->
+                    <div class="right-header align-items-center d-flex flex-lg-column flex-row mt-md-auto">
+                        <!-- Display settings -->
+                        <div class="dropdown">
+                            <button class="btn icon-button border-0 fs-6 text-white" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" title="Display settings">
+                                <i class="bi bi-sliders"></i>
+                            </button>
+                            <div class="dropdown-menu p-lg-4 p-3 rounded-4 shadow-sm" style="width: 300px;">
+                                <p class="small text-muted mb-1 text-uppercase">Theme presets</p>
+                                <ul class="theme-swatches list-unstyled d-flex gap-1 align-items-center">
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-purple" style="background:#7c3aed;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-indigo" style="background:#4f46e5;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-sky" style="background:#378aff;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-emerald" style="background:#4dcf7d;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-rose" style="background:#f43f5e;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-orange" style="background:#fa8738;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-slate" style="background:#475569;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-mocha" style="background:#7b4a2e;"></li>
+                                    <li class="theme-swatch rounded-circle" data-theme="theme-mustard" style="background:#ca8a04;"></li>
+                                </ul>
+                                <p class="small text-muted mb-1 mt-xl-4 mt-3 text-uppercase">Custom color</p>
+                                <div class="d-flex align-items-center justify-content-between gap-2 custom-color-row mb-2">
+                                    <input type="color" id="customThemeColor" class="form-control form-control-color" value="#4f46e5">
+                                    <input type="text" id="customThemeHex" class="form-control form-control-sm hex-input" value="#4f46e5">
+                                </div>
+
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="Background_Image">
+                                        <label class="form-check-label" for="Background_Image">Background Image</label>
+                                    </li>
+                                    <li class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="Glass_Effect_Toggle">
+                                        <label class="form-check-label" for="Glass_Effect_Toggle">Glass Effect</label>
+                                    </li>
+                                </ul>
+                                <hr class="border-dashed my-2">
+                                <p class="small text-muted mb-1 mt-xl-4 mt-3 text-uppercase">Font family</p>
+                                <div class="font-setting d-flex flex-wrap gap-1">
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill font-pill border" data-font="inter" style="font-family:'Inter', system-ui;">Inter</button>
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill font-pill border" data-font="dm" style="font-family:'DM Sans', system-ui;">DM Sans</button>
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill font-pill border" data-font="poppins" style="font-family:'Poppins', system-ui;">Poppins</button>
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill font-pill border" data-font="space" style="font-family:'Space Grotesk', system-ui;">Space Grotesk</button>
+                                </div>
+                                <p class="small text-muted mb-1 mt-xl-4 mt-3 text-uppercase">Font size</p>
+                                <div class="font-size-setting d-flex flex-wrap gap-1">
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill size-pill border" data-size="small">Small</button>
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill size-pill border" data-size="medium">Medium</button>
+                                    <button type="button" class="btn btn-sm px-3 btn-outline-secondary rounded-pill size-pill border" data-size="large">Big</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Light/Dark toggle -->
+                        <div class="d-flex flex-row flex-lg-column">
+                            <button class="btn icon-button border-0 fs-6 text-white" id="themeToggle" aria-label="Toggle theme">
+                                <i class="bi bi-sun"></i>
+                            </button>
+                            <button class="btn icon-button border-0 fs-6 text-white d-none d-md-inline-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#chat_drawer" aria-controls="chat_drawer">
+                                <i class="bi bi-chat-dots"></i>
+                            </button>
+                            <button class="btn icon-button border-0 fs-6 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#notifications_drawer">
+                                <i class="bi bi-app-indicator"></i>
+                            </button>
+                        </div>
+                        <!-- Profile User Dropdown -->
+                        <div class="dropdown mt-lg-3 ms-3 ms-lg-0">
+                            <button class="btn dropdown-toggle after-none border-0 p-0" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" data-intro="Manage your personal settings, view profile details, and log out.">
+                                <span class="profile-dropdown d-flex align-items-center">
+                                    <img class="rounded-circle border border-2 border-primary shadow" src="../assets/images/avatar/avatar-1.png" width="34" height="34" alt="Profile" loading="lazy">
+                                    <span class="h6 mb-0 ms-1 fw-normal nav-link p-0 d-none d-lg-none">Advait Patel</span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu p-lg-4 p-3 rounded-4 shadow-sm">
+                                <div class="mb-4">
+                                    <h6 class="mb-0">Advait Patel</h6>
+                                    <p class="small">advait.patel@gmail.com</p>
+                                    <a href="#" class="btn btn-primary text-uppercase w-100 rounded-pill">Sign out</a>
+                                </div>
+                                <a class="dropdown-item rounded-pill" href="#">My Profile</a>
+                                <a class="dropdown-item rounded-pill" href="#">My Account</a>
+                                <a class="dropdown-item rounded-pill" href="#">My Todo</a>
+                            </div>
+                        </div>
+                        <!-- Rightbar toggle btn -->
+                        <button class="btn btn-link text-white ms-2 p-2 pe-0 rightbar-toggle-btn d-lg-none" type="button">
+                            <i class="bi bi-layout-sidebar-inset"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- begin::Sidebar menu -->
+        <aside class="navbar navbar-expand-lg align-items-start px-2 px-lg-3 px-xl-4 py-3 bg-dark" data-bs-theme="dark">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAside">
+                <div class="offcanvas-header">
+                    <h6 class="offcanvas-title">Sidebar menu</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body flex-column">
+                    <!-- Primary actions -->
+                    <ul class="list-unstyled mb-4">
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-speedometer2"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-bar-chart"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- App -->
+                    <p class="fs-12 mb-1 ps-1">App</p>
+                    <ul class="list-unstyled mb-4">
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-calendar-check"></i>
+                                <span>Appointment</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-receipt"></i>
+                                <span>Invoice Builder</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-folder2"></i>
+                                <span>File Manager</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-envelope-at"></i>
+                                <span>Inbox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                <i class="bi bi-person-rolodex"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- All Views -->
+                    <p class="fs-12 mb-1 ps-1">ALL VIEWS</p>
+                    <div>
+                        <!-- EdgeUI Dashboard with submenu (collapse) -->
+                        <button class="btn w-100 text-start gap-2 px-2 py-1 rounded-3 d-flex align-items-center sidebar-link collapse-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#strategyCollapse" aria-expanded="true">
+                            <i class="bi bi-folder2"></i>
+                            <span class="flex-grow-1 small">Fintech</span>
+                            <i class="bi bi-chevron-right chevron"></i>
+                        </button>
+                        <div class="collapse show ps-4" id="strategyCollapse">
+                            <ul class="list-unstyled mt-1">
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-people"></i>
+                                        <span>Accounts</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-credit-card"></i>
+                                        <span>Cards</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-wallet2"></i>
+                                        <span>Payments</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-shuffle"></i>
+                                        <span>Transfers</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-piggy-bank"></i>
+                                        <span>Investments</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <i class="bi bi-cash-coin"></i>
+                                        <span>Loans</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="d-flex gap-2 my-2">
+                                        <button class="btn btn-sm rounded-3 btn-light flex-fill">Create</button>
+                                        <button class="btn btn-sm rounded-3 btn-light flex-fill" disabled>Settings</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- R&D Folder -->
+                        <button class="btn w-100 text-start gap-2 px-2 py-1 rounded-3 d-flex align-items-center sidebar-link collapse-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#rndCollapse" aria-expanded="false">
+                            <i class="bi bi-folder2"></i>
+                            <span class="flex-grow-1 small">New Project R&amp;D</span>
+                            <i class="bi bi-chevron-right chevron"></i>
+                        </button>
+                        <div class="collapse ps-4" id="rndCollapse">
+                            <ul class="list-unstyled mt-1">
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <span>Prototype exploration</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center sidebar-link gap-2 px-2 py-1 rounded-3" href="#">
+                                        <span>User testing results</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Rightbar -->
+        <div class="rightbar px-lg-3 py-3">
+            <p class="d-lg-none px-3">Right bar</p>
+            <div class="container-fluid">
+                <!-- just demo use -->
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card app-border rounded-4" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder bg-primary col-7"></span>
+                                    <span class="placeholder bg-primary col-4"></span>
+                                    <span class="placeholder bg-primary col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder bg-primary col-8"></span>
+                                </p>
+                                <a class="btn btn-primary disabled placeholder col-2" aria-disabled="true"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- begin::Content -->
+        <main class="app-body px-0 px-lg-3 px-xl-4 py-3">
+            <div class="container-fluid">
+                <!-- page header, Breadcrumb and page action btn -->
+                <div class="page-header mb-lg-4 mb-2">
+                    <div class="row g-4">
+                        <div class="col-lg-8 col-6">
+                            <h1 class="fs-3 section-title mb-0">Layout 4</h1>
+                            <span class="text-muted d-none d-md-inline-block mt-1">Welcome back to DashQ workspace.</span>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <!-- main search -->
+                            <form class="d-none d-md-flex me-lg-3" role="search">
+                                <input class="form-control rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                <button class="btn btn-link color-inherit p-2 btn-ripple"><i class="bi bi-share"></i></button>
+                                <button class="btn btn-link color-inherit p-2 btn-ripple"><i class="bi bi-plus-circle"></i></button>
+                                <button class="btn btn-link color-inherit p-2 btn-ripple"><i class="bi bi-filetype-pdf"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- just demo use -->
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card rounded-4 mt-0" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <h5 class="placeholder-glow">
+                                    <span class="placeholder bg-primary col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </h5>
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-7"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-4"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                    <span class="placeholder col-6"><span class="opacity-0 visually-hidden">demo span</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card app-border rounded-4" aria-hidden="true">
+                            <div class="card-body p-lg-4">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder bg-primary col-7"></span>
+                                    <span class="placeholder bg-primary col-4"></span>
+                                    <span class="placeholder bg-primary col-4"></span>
+                                    <span class="placeholder col-6"></span>
+                                    <span class="placeholder bg-primary col-8"></span>
+                                </p>
+                                <a class="btn btn-primary disabled placeholder col-2" aria-disabled="true"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- begin::Footer -->
+        <footer class="px-0 px-lg-3 px-xl-4 py-2">
+            <div class="container-fluid">
+                <div class="align-items-center d-flex flex-wrap gap-2 justify-content-between small">
+                    <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> DashQ. All rights reserved.</p>
+                    <ul class="list-unstyled mb-0 d-flex align-items-center justify-content-between gap-3">
+                        <li><a class="color-inherit text-decoration-none" href="#">Docs</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    
+    </div>
+      
+    <!-- offcanvas: Chat Drawer -->
+    <div class="offcanvas m-md-4 rounded-4 offcanvas-end" tabindex="-1" id="chat_drawer">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fs-6">Chat</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="chat-card h-100 d-flex flex-column">
+                <!-- begin::Header -->
+                <div class="chat-header d-flex align-items-center justify-content-between border-bottom border-top p-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="avatar avatar-text" style="background:#fa8738;">DG</div>
+                        <div class="lh-1">
+                            <p class="chat-title mb-0 fw-bold">Design Team</p>
+                            <span class="chat-subtitle text-muted small">Alex is typing…</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <div class="d-flex align-items-center avatar-group ps-2">
+                            <img class="avatar avatar-sm me-n2 border border-2 border-white" src="../assets/images/avatar/avatar-1.png" loading="lazy" alt="avatar-1">
+                            <img class="avatar avatar-sm me-n2 border border-2 border-white" src="../assets/images/avatar/avatar-2.png" loading="lazy" alt="avatar-2">
+                            <div class="avatar avatar-sm border border-2 border-white d-flex align-items-center justify-content-center" style="background:#4dcf7d;">
+                                <span class="avatar-text" style="font-size:.7rem;">+5</span>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-link btn-sm px-2 text-muted dropdown-toggle after-none" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-end p-3 rounded-4 shadow-sm">
+                                <li><button class="dropdown-item rounded-pill" type="button">Action</button></li>
+                                <li><button class="dropdown-item rounded-pill" type="button">Another action</button></li>
+                                <li><button class="dropdown-item rounded-pill" type="button">Something else here</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Body -->
+                <div class="chat-body h-100 overflow-y-auto p-3">
+                    <!-- Incoming message 1 -->
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <img class="avatar" src="../assets/images/avatar/avatar-3.png" loading="lazy" alt="avatar-3">
+                        <div>
+                            <div class="msg-bubble msg-in border mb-1">
+                                Good morning!
+                            </div>
+                            <div class="msg-bubble msg-in border">
+                                The new deployment went live. Can everyone confirm access?
+                            </div>
+                            <span class="msg-meta text-muted mt-1">09:12</span>
+                        </div>
+                    </div>
+                    <!-- Outgoing message -->
+                    <div class="d-flex align-items-end flex-row-reverse gap-2 mb-4">
+                        <img class="avatar avatar-sm" src="../assets/images/avatar/avatar-4.png" loading="lazy" alt="avatar-4">
+                        <div class="text-end">
+                            <div class="msg-bubble msg-out ms-auto">
+                                Yes, logging in now.
+                            </div>
+                            <span class="msg-meta text-muted mt-1">
+                                09:14
+                                <span class="ms-1 text-success">✔✔</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Incoming message 2 -->
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <img class="avatar" src="../assets/images/avatar/avatar-5.png" loading="lazy" alt="avatar-5">
+                        <div>
+                            <div class="msg-bubble msg-in border">
+                                I can access it. Some pages feel faster than before.
+                            </div>
+                            <span class="msg-meta text-muted mt-1">09:15</span>
+                        </div>
+                    </div>
+                    <!-- Incoming message 3 -->
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <img class="avatar" src="../assets/images/avatar/avatar-2.png" loading="lazy" alt="avatar-2">
+                        <div>
+                            <div class="msg-bubble msg-in border">
+                                Great! Please check billing and analytics modules as well.
+                            </div>
+                            <span class="msg-meta text-muted mt-1">09:16</span>
+                        </div>
+                    </div>
+                    <!-- Outgoing message 2 -->
+                    <div class="d-flex align-items-end flex-row-reverse gap-2 mb-2">
+                        <img class="avatar avatar-sm" src="../assets/images/avatar/avatar-4.png" loading="lazy" alt="avatar-4">
+                        <div class="text-end">
+                            <div class="msg-bubble msg-out ms-auto">
+                                Billing looks fine. I'll test analytics next.
+                            </div>
+                            <span class="msg-meta text-muted mt-1">09:17</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chat Footer -->
+                <div class="chat-footer mt-auto p-3 border-top bg-secondary-subtle rounded-bottom-4">
+                    <div class="d-flex align-items-center gap-2 position-relative">
+                        <input type="text" class="form-control rounded-pill ps-3" placeholder="Write a message…">
+                        <div class="position-absolute top-50 end-0 translate-middle-y">
+                            <button class="btn btn-link p-0 me-2"><i class="bi bi-upload"></i></button>
+                            <button class="btn btn-primary rounded-pill px-3 py-2 btn-sm">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas: Notifications Drawer -->
+    <div class="offcanvas m-md-4 rounded-4 offcanvas-start" tabindex="-1" id="notifications_drawer">
+        <div class="offcanvas-header">
+            <p class="offcanvas-title fs-6">Notifications</p>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="notification-card h-100 d-flex flex-column">
+                <!-- Tabs -->
+                <div class="bg-body-tertiary rounded-pill mx-3 p-1 border">
+                    <ul class="nav nav-tabs border-0">
+                        <li class="nav-item flex-fill"><button class="nav-link w-100 active" data-bs-toggle="tab" data-bs-target="#tab-all" type="button">All</button></li>
+                        <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-team" type="button">Team</button></li>
+                        <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-inbox" type="button">Inbox</button></li>
+                        <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="tab" data-bs-target="#tab-following" type="button">Following</button></li>
+                    </ul>
+                </div>
+                <!-- Tab content -->
+                <div class="tab-content h-100 overflow-y-auto p-3">
+                    <!-- ALL TAB -->
+                    <div class="tab-pane fade show active" id="tab-all">
+                        <!-- Item 1 -->
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-7.png" loading="lazy" alt="avatar-7">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-0 small">
+                                            <span class="fw-semibold">Mark Collins</span>
+                                            <span class="text-body-secondary"> commented on </span>
+                                            <a href="#" class="link-primary text-decoration-none">Design System v3</a>
+                                        </p>
+                                    </div>
+                                    <div class="mb-2 fs-12">12 mins ago • UI Guild</div>
+                                    <div class="border rounded-3 p-2 bg-body-tertiary small">
+                                        “Can we try a slightly softer shadow on the cards for light mode?”
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-8.png" loading="lazy" alt="avatar-8">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Emily Carter</span>
+                                        <span class="text-body-secondary"> added you to </span>
+                                        <a href="#" class="link-primary text-decoration-none">Sprint Planning</a>
+                                    </p>
+                                    <div class="mb-2 fs-12">45 mins ago • Product</div>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <span class="badge bg-light text-secondary border tag-pill">Planning</span>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis tag-pill">High priority</span>
+                                        <span class="badge bg-primary-subtle text-primary-emphasis tag-pill">Sprint Q2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-9.png" loading="lazy" alt="avatar-9">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Liam Brown</span>
+                                        <span class="text-body-secondary"> requested access to </span>
+                                        <a href="#" class="link-primary text-decoration-none">Revenue Dashboard</a>
+                                    </p>
+                                    <div class="mb-2 fs-12">3 hours ago • Analytics</div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-ripple btn-outline-secondary btn-sm rounded-pill px-3">Deny</button>
+                                        <button class="btn btn-ripple btn-dark btn-sm rounded-pill px-3">Approve</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-10.png" loading="lazy" alt="avatar-10">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Sara Lee</span>
+                                        <span class="text-body-secondary"> shared a file with you</span>
+                                    </p>
+                                    <div class="mb-2 fs-12">5 hours ago • 1.4 MB</div>
+                                    <div class="border rounded-3 p-2 bg-body-tertiary small d-flex align-items-center gap-2 justify-content-between">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="badge bg-danger-subtle text-danger fw-semibold rounded-3">PDF</span>
+                                            <div>
+                                                <div class="small fw-semibold text-body">Q3_report.pdf</div>
+                                                <div class="small text-body-secondary">Updated 20 mins ago</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="bi bi-download"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TEAM TAB -->
+                    <div class="tab-pane fade" id="tab-team">
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-12.png" loading="lazy" alt="avatar-12">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Design Team</span>
+                                        <span class="text-body-secondary"> assigned you to </span>
+                                        <a href="#" class="link-primary text-decoration-none">Marketing Site Refresh</a>
+                                    </p>
+                                    <div class="mb-2 fs-12">Yesterday • Design Board</div>
+                                    <span class="badge bg-success-subtle text-success-emphasis tag-pill">New task</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- INBOX TAB (simpler subset) -->
+                    <div class="tab-pane fade" id="tab-inbox">
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-11.png" loading="lazy" alt="avatar-11">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Support Bot</span>
+                                        <span class="text-body-secondary"> replied to your ticket </span>
+                                        <a href="#" class="link-primary text-decoration-none">#4821</a>
+                                    </p>
+                                    <div class="mb-2 fs-12">9 mins ago • Billing</div>
+                                    <div class="border rounded-3 p-2 bg-light small">
+                                        “We've updated your invoice and applied the requested discount.”
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FOLLOWING TAB -->
+                    <div class="tab-pane fade" id="tab-following">
+                        <div class="notif-item py-3">
+                            <div class="d-flex gap-3">
+                                <img class="avatar" src="../assets/images/avatar/avatar-8.png" loading="lazy" alt="avatar-8">
+                                <div class="flex-grow-1">
+                                    <p class="mb-0 small">
+                                        <span class="fw-semibold">Changelog</span>
+                                        <span class="text-body-secondary"> posted </span>
+                                        <a href="#" class="link-primary text-decoration-none">Release 1.8.0</a>
+                                    </p>
+                                    <div class="mb-2 fs-12">2 days ago • Updates</div>
+                                    <div class="border rounded-3 p-2 bg-light small">
+                                        New automation rules, improved search results, and performance fixes.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer actions -->
+                <div class="mt-auto border-top p-3 d-flex gap-2">
+                    <button class="btn btn-ripple btn-outline-secondary w-50 rounded-pill">Archive all</button>
+                    <button class="btn btn-ripple btn-dark w-50 rounded-pill">Mark all as read</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- begin::DashQ Vendors Scripts -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- begin::DashQ App Custom Scripts -->
+    <script src="../assets/js/app.js"></script>
+
+    <!-- begin::DashQ page specific script -->
+    <script>
+        // Rightbar Toggle
+        const rightbarToggleBtn = document.querySelector(".rightbar-toggle-btn");
+        const rightbar = document.querySelector(".rightbar");
+
+        rightbarToggleBtn.addEventListener("click", function () {
+            rightbar.classList.toggle("open");
+        });
+    </script>
+
+</body>
+
+<!-- Mirrored from https://edggeui.com/dashq/html/layouts/layout-4.html by HTTrack Website Copier/3.x [XR&CO], Tue, 15 Sep 2026 16:25:56 GMT -->
+</html>

@@ -1,0 +1,104 @@
+            <div class="modal-body d-flex flex-column align-items-center justify-content-center position-relative overflow-hidden p-0 z-2" style="background: rgba(255, 255, 255, 0.95);">
+                
+                <!-- Setup View -->
+                <div id="setupView" class="w-100 h-100 p-5 d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="fw-bold mb-4">Interview Setup</h3>
+                    <div class="w-100" style="max-width: 400px;">
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-muted fw-bold">Target Role</label>
+                            <input type="text" id="setupRole" class="form-control form-control-lg bg-light border-0 shadow-sm" value="Software Developer">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label text-muted fw-bold">Difficulty</label>
+                            <select id="setupDifficulty" class="form-select form-select-lg bg-light border-0 shadow-sm">
+                                <option>Intermediate</option>
+                                <option>Beginner</option>
+                                <option>Advanced</option>
+                            </select>
+                        </div>
+                        <div class="mb-5 text-start">
+                            <label class="form-label text-muted fw-bold">Duration (Mins)</label>
+                            <input type="number" id="setupDuration" class="form-control form-control-lg bg-light border-0 shadow-sm" value="5" min="1" max="60">
+                        </div>
+                        <div class="alert alert-info text-start small mb-4">
+                            <i class="bi bi-camera-video me-2"></i> Camera is optional. Microphone is required.
+                        </div>
+                        <button class="btn btn-primary w-100 rounded-pill py-3 fw-bold fs-5 shadow" onclick="startInterviewSession()">
+                            Start Interview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interview View -->
+                <div id="interviewView" class="w-100 h-100 flex-column align-items-center justify-content-center d-none pt-4 position-relative">
+                    
+                    <!-- Clean Pulse Visualizer -->
+                    <div class="clean-core-container mb-4 d-flex align-items-center justify-content-center mt-5">
+                        <div id="aiCore" class="clean-core idle">
+                            <div class="clean-orb">
+                                <i id="aiIcon" class="bi bi-mic-fill text-white fs-1 position-relative z-3"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Camera Box -->
+                    <div class="position-absolute rounded-4 overflow-hidden shadow border border-2 border-white d-none d-md-block" style="bottom: 30px; right: 30px; width: 240px; height: 160px; z-index: 10;">
+                        <video id="candidateVideo" autoplay muted class="w-100 h-100" style="object-fit: cover; background: #000;"></video>
+                    </div>
+
+                    <!-- Status -->
+                    <h4 id="interviewStatus" class="fw-medium text-dark mb-4" style="letter-spacing: -0.5px;">System Ready</h4>
+
+                    <!-- Transcript Panel -->
+                    <div class="transcript-panel bg-white shadow-sm border rounded-4 w-100 p-4 mb-4 mx-auto" style="max-width: 750px; height: 350px;">
+                        <div id="transcriptArea" class="d-flex flex-column gap-3 h-100 overflow-auto pe-2 custom-scrollbar">
+                            <div class="text-center w-100 mt-auto mb-auto text-secondary small">Session started. Avoid switching tabs during the interview.</div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="d-flex gap-3 position-relative z-3 mt-2 pb-5">
+                        <button id="btnDoneSpeaking" class="btn btn-dark rounded-pill px-5 py-3 shadow-sm fw-bold fs-5 d-none" onclick="recognition.stop()">
+                            <i class="bi bi-check-lg me-2"></i> Finalize Answer
+                        </button>
+                        <button id="btnEndSession" class="btn btn-outline-danger rounded-pill px-5 py-3 shadow-sm fw-bold fs-5" onclick="endInterview()">
+                            <i class="bi bi-stop-fill me-2"></i> Terminate Early
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Report View -->
+                <div id="reportView" class="w-100 h-100 p-5 d-flex flex-column align-items-center justify-content-center bg-white d-none overflow-auto">
+                    <h2 class="fw-bold mb-3">Interview Performance</h2>
+                    <div id="reportScore" class="display-3 fw-bold text-primary mb-4">-- / 100</div>
+                    
+                    <div class="w-100 text-start bg-light p-4 rounded-4 border mb-4" style="max-width: 700px;">
+                        <h5 class="fw-bold text-dark border-bottom pb-2 mb-3"><i class="bi bi-bar-chart-fill me-2 text-primary"></i> AI Analysis</h5>
+                        <div id="reportAnalysis" class="text-secondary lh-lg mb-0" style="font-size: 1.05rem;">Generating detailed AI performance report based on your transcript...</div>
+                    </div>
+                    
+                    <div class="w-100 d-flex gap-4 mb-4" style="max-width: 700px;">
+                        <!-- Speech Metrics -->
+                        <div class="flex-fill bg-light p-4 rounded-4 border">
+                            <h5 class="fw-bold text-dark border-bottom pb-2 mb-3"><i class="bi bi-mic-fill me-2 text-primary"></i> Speech Metrics</h5>
+                            <ul class="list-unstyled text-secondary mb-0 fs-6">
+                                <li class="d-flex justify-content-between">
+                                    <span>Filler Words (um, like):</span>
+                                    <span id="fillerCount" class="fw-bold text-danger">0</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Proctoring Conduct -->
+                        <div class="flex-fill bg-light p-4 rounded-4 border">
+                            <h5 class="fw-bold text-dark border-bottom pb-2 mb-3"><i class="bi bi-shield-check me-2 text-primary"></i> Proctoring Conduct</h5>
+                            <ul id="proctoringList" class="list-unstyled mb-0">
+                                <li class="text-secondary small">Evaluating integrity...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-dark px-5 rounded-pill py-3 fw-bold fs-5 shadow-sm" data-bs-dismiss="modal">Close Simulator</button>
+                </div>
+
+            </div>

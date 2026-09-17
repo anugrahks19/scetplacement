@@ -1,0 +1,114 @@
+        <main class="app-body border">
+            <div class="page-header py-2 py-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    <div class="row align-items-center mb-3 mb-lg-0">
+                        <div class="col-12 col-md-auto mb-3 mb-md-0">
+                            <div class="page-title d-flex align-items-center gap-2 mb-2">
+                                <h4 class="mb-0">Certifications</h4>
+                            </div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="../dashboard-student.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Certifications</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content pt-0 pb-lg-4 p-lg-4">
+                <div class="container-fluid">
+                    
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-12 col-md-8">
+                            <h5 class="fw-bold mb-1">Your Earned Credentials</h5>
+                            <p class="text-secondary mb-0">Showcase these certifications to stand out to employers.</p>
+                        </div>
+                        <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                            <button class="btn btn-primary rounded-pill px-4"><i class="bi bi-plus-lg me-2"></i> Add External Cert</button>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                        
+                        <!-- Cert 1 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative cert-card">
+                                <div class="card-body p-4 text-center">
+                                    <div class="cert-icon-wrapper mx-auto mb-3 bg-light rounded-circle d-flex align-items-center justify-content-center text-primary" style="width: 80px; height: 80px;">
+                                        <i class="bi bi-award-fill fs-1"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-1">AWS Cloud Practitioner</h5>
+                                    <p class="text-secondary small mb-3">Amazon Web Services</p>
+                                    
+                                    <div class="d-flex justify-content-center gap-3 mb-4 small fw-semibold">
+                                        <div class="text-success"><i class="bi bi-patch-check-fill me-1"></i> Verified</div>
+                                        <div class="text-secondary"><i class="bi bi-calendar3 me-1"></i> Issued: Aug 2026</div>
+                                    </div>
+                                    
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-primary flex-grow-1 rounded-pill fw-bold">View</button>
+                                        <button class="btn btn-primary flex-grow-1 rounded-pill fw-bold"><i class="bi bi-download"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative cert-card">
+                                <div class="card-body p-4 text-center">
+                                    <div class="cert-icon-wrapper mx-auto mb-3 bg-light rounded-circle d-flex align-items-center justify-content-center text-info" style="width: 80px; height: 80px;">
+                                        <i class="bi bi-google fs-1"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-1">Google Data Analytics</h5>
+                                    <p class="text-secondary small mb-3">Google / Coursera</p>
+                                    
+                                    <div class="d-flex justify-content-center gap-3 mb-4 small fw-semibold">
+                                        <div class="text-success"><i class="bi bi-patch-check-fill me-1"></i> Verified</div>
+                                        <div class="text-secondary"><i class="bi bi-calendar3 me-1"></i> Issued: May 2026</div>
+                                    </div>
+                                    
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-primary flex-grow-1 rounded-pill fw-bold">View</button>
+                                        <button class="btn btn-primary flex-grow-1 rounded-pill fw-bold"><i class="bi bi-download"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cert 3 -->
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative cert-card">
+                                <div class="card-body p-4 text-center">
+                                    <div class="cert-icon-wrapper mx-auto mb-3 bg-light rounded-circle d-flex align-items-center justify-content-center text-danger" style="width: 80px; height: 80px;">
+                                        <i class="bi bi-shield-lock-fill fs-1"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-1">Cybersecurity Fundamentals</h5>
+                                    <p class="text-secondary small mb-3">CompTIA</p>
+                                    
+                                    <div class="d-flex justify-content-center gap-3 mb-4 small fw-semibold">
+                                        <div class="text-warning"><i class="bi bi-hourglass-split me-1"></i> In Progress</div>
+                                    </div>
+                                    
+                                    <div class="progress mb-4" style="height: 10px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 65%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-dark w-100 rounded-pill fw-bold">Continue Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .cert-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+                .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+            </style>
+        </main>
